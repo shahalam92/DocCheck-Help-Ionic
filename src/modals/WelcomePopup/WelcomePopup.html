@@ -1,0 +1,39 @@
+<div
+	class="welcome-popup-content"
+	ng-controller="WelcomePopup as welcome"
+	>
+
+	<div
+		translate-once="WELCOME_POPUP.INTRO"
+		>
+	</div>
+
+	<!--
+	<input
+		type="text"
+		class="dc-input"
+		maxlength="4"
+		placeholder="{{::('WELCOME_POPUP.CODE_PLACEHOLDER'|translate)}}"
+		/>
+	-->
+
+	<div
+		class="popup-buttons"
+		>
+		
+		<!--<button
+			class="dc-button-block dc-button-lightgreen"
+			translate-once="WELCOME_POPUP.BUTTONS.CONFIRM"
+			>			
+		</button>-->
+
+		<button
+			class="dc-button-block dc-button-lightgreen"
+			translate-once="WELCOME_POPUP.BUTTONS.DISMISS"
+			ng-click="welcome.hide()"
+			>			
+		</button>
+
+	</div>
+
+</div>

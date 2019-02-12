@@ -1,0 +1,18 @@
+<!-- FavoriteButton directive template -->
+<div 
+	class="prompt fa fa-heart" 
+	ng-if="!vm.addTriggered"
+	translate-once="FAVORITE_BUTTON.ADD_TO_FAVS"
+	> 
+</div>
+
+<div
+	class="success fa fa-ok"
+	ng-if="vm.addSuccess"
+	translate-once="FAVORITE_BUTTON.ADDED_SUCCESSFULLY"
+	translate-values="
+	{
+		expert : '{{expert.expert_profile.full_name}}'
+	}"
+	>
+</div>

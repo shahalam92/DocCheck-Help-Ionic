@@ -1,0 +1,47 @@
+<ion-tabs 
+  class="tabs-doccheck tabs-icon-only slide-in-right" 
+  ng-class="{
+    'hide-tabs-nav': $root.hideTabs
+  }" 
+  keyboard-shrink
+  >
+
+  <ion-tab 
+    icon="fa fa-home guided-tour-home" 
+    ng-click="tab.goTo($event, 'tabs.home.overview', 0)"
+    >
+    <ion-nav-view name="home"></ion-nav-view>
+  </ion-tab>
+
+  <ion-tab 
+    icon="fa fa-ask guided-tour-consultations" 
+    ng-click="tab.goTo($event, 'tabs.consultations.overview', 1)" 
+    badge="tab.messageBadge"
+    ><!-- badge-style="dc-pulse" -->
+    <ion-nav-view 
+      name="consultations"
+      >      
+    </ion-nav-view>
+  </ion-tab>
+
+  <ion-tab 
+    icon="fa fa-heart guided-tour-favorites" 
+    ng-click="tab.goTo($event, 'tabs.favorites.overview', 2)"
+    >
+    <ion-nav-view 
+      name="favorites"
+      >      
+    </ion-nav-view>
+  </ion-tab>
+
+  <ion-tab 
+    icon="fa fa-cog guided-tour-settings" 
+    ng-click="tab.goTo($event, 'tabs.settings.overview', 3)"
+    >
+    <ion-nav-view 
+      name="settings"
+      >        
+    </ion-nav-view>
+  </ion-tab>
+
+</ion-tabs>

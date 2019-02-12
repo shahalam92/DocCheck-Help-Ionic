@@ -1,0 +1,17 @@
+
+
+/* Promotion style */
+
+.promotion-view
+{
+	ion-content
+	{
+		-webkit-overflow-scrolling: touch !important;
+		overflow: scroll !important;
+	}
+
+	iframe
+	{
+		background-color: $dc_white;
+	}	
+}

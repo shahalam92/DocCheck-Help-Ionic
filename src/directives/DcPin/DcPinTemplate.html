@@ -1,0 +1,21 @@
+<!-- DcPin directive template -->
+<div
+	class="label"
+	>
+	PIN
+</div>
+
+<div 
+	class="diget-wrapper"
+	ng-repeat="input in dcp.inputs track by $index"
+	>
+
+	<input
+		id="dc-pin{{$index}}"
+		type="tel"
+		class="dc-input diget"
+		ng-model="dcp.inputs[$index]"
+		>
+	</div>
+
+</div>

@@ -1,0 +1,229 @@
+<!-- InitConsultation view template -->
+
+<ion-view
+	class="init-consultation-view"
+	view-title="{{::('INITCONSULTATION.TITLE'|translate)}}"
+	hide-tabs
+	><!--cache-view="false"-->
+
+	<ion-nav-bar align-title="center" class="bar-doccheck">
+
+    <ion-nav-back-button ng-click="initConsultation.leaveInitialization()">
+    </ion-nav-back-button>
+
+    <ion-nav-buttons side="right">
+    </ion-nav-buttons>
+
+  </ion-nav-bar>
+
+	<ion-content
+		class="fullscreen"
+		>
+
+		<expert-headline
+			expert="initConsultation.expert"
+			>
+		</expert-headline>
+
+		<dc-loading-spinner
+			class="center"
+			ng-if="!initConsultation.upToDate && !initConsultation.error"
+			text="{{::initConsultation.getTranslation('LOADING.PAYMENT_INFO')}}"
+			>
+		</dc-loading-spinner>
+
+		<div
+      ng-if="initConsultation.error"
+      class="api-error"
+      >
+
+      <div
+        class="text"
+        translate="INITCONSULTATION.ERROR.TEXT"
+        >
+      </div>
+      <button
+        class="dc-button-block dc-button-lightgreen"
+        translate="INITCONSULTATION.ERROR.RETRY"
+        ng-click="initConsultation.retrieveConsultationTypes()"
+        >
+      </button>
+      <button
+        class="dc-button-block dc-button-gray"
+        translate="INITCONSULTATION.ERROR.BACK"
+        ng-click="initConsultation.goBack()"
+        >
+      </button>
+
+    </div>
+
+
+    <form
+      ng-submit="initConsultation.initPayment()"
+			ng-if="initConsultation.upToDate && !initConsultation.error"
+			class="wrapper animate-if quick"
+			ng-class="{
+				payment : !(initConsultation.credit > 0)
+			}"
+			>
+
+			<div
+				class="warranty"
+				ng-if="!initConsultation.isCall() && initConsultation.expiryInHours"
+				translate-once="INITCHATVIEW.WARRANTY.{{initConsultation.expiryInHours == 1}}"
+				translate-values="{
+					hours : initConsultation.expiryInHours
+				}"
+				>
+			</div>
+
+			<div
+				class="active-consultation-hint fa fa-chevron-right"
+				ng-if="initConsultation.runningConsultations.length > 0"
+				translate-once="INITCONSULTATION.HAS_ACTIVE_CONSULTATIONS.{{initConsultation.runningConsultations.length == 1}}"
+				translate-values="{ 'amount' : initConsultation.runningConsultations.length}"
+				ng-click="initConsultation.openActiveConsultation()"
+				>
+			</div>
+
+			<div
+				class="dc-headline"
+				>
+				<span
+					class="headline"
+					translate-once="{{::initConsultation.translationIdent}}.CHARGE"
+					>
+				</span>
+				<span
+					class="price"
+					>
+					{{initConsultation.priceString}}&nbsp;€
+				</span>
+			</div>
+			<div
+				class="fa fa-chevron-right call-intro"
+				ng-if="::initConsultation.isCall()"
+				translate-once="INITCONSULTATION.INTROMODAL.SHOW"
+				ng-click="initConsultation.openIntroModal()"
+				>
+			</div>
+
+			<ul
+				class="details"
+				translate-once="{{::initConsultation.translationIdent}}.DETAILS"
+				translate-values="{price : initConsultation.priceString}"
+				>
+			</ul>
+
+			<ul
+				class="payment-types"
+				>
+				<span
+					translate-once="INITCONSULTATION.PAYMENT.LABEL"
+					>
+				</span>
+
+				<li
+					ng-click="initConsultation.setPaymentMethod(initConsultation.PAYMENT_TYPES.PAYPAL)"
+					ng-class="{
+						'selected'    : initConsultation.paymentMethod == initConsultation.PAYMENT_TYPES.PAYPAL,
+						'not-selected': initConsultation.paymentMethod != initConsultation.PAYMENT_TYPES.PAYPAL
+					}"
+					translate-once="INITCONSULTATION.PAYMENT.PAYPAL"
+					>
+				</li>
+
+				<li
+					ng-click="initConsultation.setPaymentMethod(initConsultation.PAYMENT_TYPES.VOUCHER)"
+					ng-class="{
+						'selected'    : initConsultation.paymentMethod == initConsultation.PAYMENT_TYPES.VOUCHER,
+						'not-selected': initConsultation.paymentMethod != initConsultation.PAYMENT_TYPES.VOUCHER
+					}"
+					translate-once="INITCONSULTATION.PAYMENT.VOUCHER"
+					>
+				</li>
+			</ul>
+
+			<div
+				class="already-paid"
+				translate="{{::initConsultation.translationIdent}}.ALREADY_PAID_{{!!initConsultation.isFirstChat}}"
+				translate-values="{amount : initConsultation.credit}"
+				>
+			</div>
+
+			<div
+				class="voucher-input-wrapper"
+				ng-show="initConsultation.paymentMethod == initConsultation.PAYMENT_TYPES.VOUCHER"
+				ng-click="initConsultation.setPaymentMethod(initConsultation.PAYMENT_TYPES.VOUCHER)"
+				>
+				<input
+					id="voucherInput"
+					ng-disabled="initConsultation.paymentMethod != initConsultation.PAYMENT_TYPES.VOUCHER"
+					ng-model="initConsultation.voucherModel"
+					type="text"
+					maxlength="14"
+					placeholder="{{::('INITCONSULTATION.VOUCHER.LABEL'|translate)}}"
+					autocomplete="off"
+					autocorrect="off"
+					autocapitalize="off"
+					spellcheck="false"
+					/>
+			</div>
+
+			<div
+				class="error"
+				ng-if="initConsultation.initializationError || initConsultation.voucherError"
+				ng-bind="initConsultation.initializationError || initConsultation.voucherError"
+				>
+			</div>
+
+			<div
+				ng-if="!initConsultation.agb.hidden"
+				class="checkbox-wrapper"
+				>
+				<dc-checkbox
+					text=""
+					model="initConsultation.agb"
+					>
+				</dc-checkbox>
+				<div
+					ng-click="initConsultation.showPrivacyOrToS($event)"
+          class="checkbox-overlay"
+          translate="INITCONSULTATION.TERMS"
+					>
+				</div>
+			</div>
+
+			<div
+			  class="button-wrapper"
+			  >
+
+        <button
+          type="submit"
+			    class="dc-button-block dc-button-lightgreen"
+			    translate="INITCONSULTATION.CONTINUE_{{!!initConsultation.isFirstChat}}"
+			    ng-disabled="!initConsultation.agb.checked"
+			    >
+			  </button>
+
+			</div>
+
+      <div translate-once="INITCHATVIEW.FIRST_CHAT_HINT"
+        class="hint"
+        ng-if="initConsultation.isFirstChat"
+        >
+      </div>
+
+			<!--
+				- removed due to DCX-1095
+			<div
+				class="hint"
+				translate-once="{{::initConsultation.translationIdent}}.HINT"
+				>
+			</div>
+			  -->
+      </form>
+
+	</ion-content>
+
+</ion-view>

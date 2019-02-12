@@ -1,0 +1,249 @@
+
+
+/* ConsultationListingItem style */
+
+consultation-listing-item
+{
+	@include -w-prefix(display, -flex);
+
+	height: 100px;
+	padding: 12px 12px 0;
+	position: relative;
+
+	&.ng-move {
+	  @include -w-prefix(-transition, all ease-in-out 300ms);
+
+	  opacity: 0;
+	}
+
+	&.ng-move.ng-move-active {
+	  opacity: 1;
+	}
+
+	.avatar
+	{
+		@include -w-prefix(-flex, 0 0 auto);
+		
+		margin-top: 4px;
+		height: 52px;
+		width: 52px;
+		border-radius: 100%;
+	}
+
+	.favorite-button, .state-button
+	{
+		position: absolute;
+    border-radius: 100%;
+    background-color: white;
+    border: none;
+    padding: 0;
+	}
+
+	.favorite-button
+	{
+		color: $dc_gray;
+		left: 10px;
+		top: 12px;
+		height: 16px;
+    width: 16px;
+    font-size: 8px;
+	}
+
+	.state-button
+	{
+		left: 48px;
+		top: 50px;
+		height: 16px;
+    width: 16px;
+    font-size: 8px;
+	}
+
+	.details
+	{
+		@include -w-prefix(-flex, 1);
+
+		width: 0;
+		padding-left: 12px;
+
+		&:before
+		{
+			position: absolute;
+			font-size: 1em;
+			line-height: 1.25em;
+		}
+
+		&.ended
+		{
+			color: $dc_darkgray;
+		}
+
+		&.expired + .open-button
+		{
+			position: relative;
+
+			&::after
+			{
+				@include -w-prefix(display, -flex);
+				@include -w-prefix(-align-items, center);
+				@include -w-prefix(-justify-content, center);
+				@include -w-prefix(-transform, rotate(45deg));
+				@include -w-prefix(-transform-origin, center 100%);
+				content: '';
+				
+				position: absolute;
+				top: 0;
+				left: 0;
+				
+				width: 90%;
+				height: 50%;
+				margin: 1px 5% 0;
+
+				z-index: 10;
+				border-bottom: 2px solid $dc_gray;
+			}
+		}
+
+		&.error
+		{
+			&:before, .name
+			{
+				color: $dc_red;				
+			}
+		}
+
+		&.unread
+		{
+			font-size: 1em;
+			//color: $dc_red;
+			
+			.name
+			{
+				font-family: Roboto-Black;
+
+				.count
+				{
+					display: inline-block;
+				}
+			}			
+
+			.text-consultation-content
+			{
+				color: black;
+			}
+		}
+
+		&.prepare, &.closure-awaiting
+		{
+			.text-consultation-content
+			{
+				font-family: Roboto;
+				color: $dc_red;
+			}
+		}
+
+		.name
+		{
+			height: 1.25em;
+			//margin-left: 22px;
+
+			.count
+			{
+				font-family: Roboto-Black;
+				display: none;
+			}
+		}
+
+		.text-consultation-content
+		{
+			@include showLines(2, 1.1em, 1.25em);
+
+			height: 2.5em;
+
+			margin: 4px 0;
+			padding-right: 12px;
+		}
+
+		.text-consultation-stamp
+		{
+			color: $dc_darkgray;
+			font-size: 0.8em;
+			line-height: 1.4em;
+		}
+
+		&.prepare
+		{
+			&.call:not(.available)
+			{
+				font-family: Roboto;
+				color: $dc_darkgray;
+			}
+
+			&:before
+			{
+				font-weight: 700;
+			}
+		}
+	}
+
+	.open-button
+	{
+		@include -w-prefix(-flex, 0 0 auto);
+		@include -w-prefix(-align-self, center);
+
+		width: 36px;
+		height: 36px;
+
+		padding: 0;
+		margin-bottom: 12px;
+		
+		background-color: $dc_gray;
+		border-radius: 50%;
+		font-size: $dc_big;
+		border: none;
+		color: white;
+
+		&.active
+		{
+			background-color: $dc_lightgreen;
+		}
+	}
+
+	.online
+	{
+		color: $dc_lightgreen;
+	}
+
+	.offline
+	{
+		color: $dc_darkgray;
+	}
+
+	.busy
+	{
+		color: $dc_yellow;
+	}
+
+	&:nth-of-type(even)
+	{
+		background-color: $dc_lightergray;
+
+		.favorite-button, .state-button
+		{
+			background-color: $dc_lightergray;
+		}
+	}
+
+	&:last-of-type
+	{
+		border-bottom: 1px solid $dc_lightergray;
+	}
+
+	.debug-info.id
+	{
+		position: absolute;
+		top: 0;
+		right: 12px;
+		color: $dc_lightgreen;
+		font-family: Roboto-Bold;
+	}
+}

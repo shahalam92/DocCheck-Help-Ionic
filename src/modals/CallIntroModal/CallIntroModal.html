@@ -1,0 +1,306 @@
+<ion-modal-view
+	class="call-intro-modal"
+	>
+
+	<div
+		class="modal-wrapper"
+		ng-controller="CallIntroCtrl as callintro"
+		>
+
+		<ion-content
+			scroll="false"
+			>
+
+			<ion-slide-box
+				delegate-handle="CallIntroSlides"
+				>
+
+				<!--
+					- 1. CALL START
+					-->
+				<ion-slide
+					class="call-step-you"
+					>
+
+					<div
+						class="title"
+						translate="CALLINTROMODAL.CALLSTART.TITLE"
+						>
+					</div>
+
+					<div
+						class="call-graphic"
+						>
+						
+						<div 
+							class="call-icon call-person fa fa-user"
+							translate="CALLINTROMODAL.YOU"
+							>
+						</div>
+
+						<div 
+							class="call-arrow animated left fa fa-long-arrow-left"
+							>
+							<br />&nbsp;
+						</div>
+
+						<div 
+							class="call-icon call-dc fa fa-phone ringing"
+							translate="CALLINTROMODAL.DC"
+							>
+						</div>
+
+					</div>
+
+					<div
+						class="intro-text"
+						translate="CALLINTROMODAL.CALLSTART.TEXT"
+						>
+					</div>
+
+				</ion-slide>
+
+				<!--
+					- 2. CALL AUTHENTICATION
+					-->
+				<ion-slide
+					class="call-step-you"
+					>
+
+					<div
+						class="title"
+						translate="CALLINTROMODAL.AUTHENTICATION.TITLE"
+						>
+					</div>
+
+					<div
+						class="call-graphic"
+						>
+						
+						<div 
+							class="call-icon active call-person fa fa-user"
+							translate="CALLINTROMODAL.YOU"
+							>
+						</div>
+
+						<div 
+							class="call-arrow active left fa fa-smartphone"
+							>
+						</div>
+
+						<div 
+							class="call-arrow active left fa fa-long-arrow-right"
+							>
+							<br />&nbsp;
+						</div>
+
+						<div 
+							class="call-icon active call-person fa fa-phone"
+							translate="CALLINTROMODAL.DC"
+							>
+						</div>
+
+					</div>
+
+					<div
+						class="intro-text"
+						translate="CALLINTROMODAL.AUTHENTICATION.TEXT"
+						>
+					</div>
+
+				</ion-slide>
+
+				<!--
+					- 3. CALL CONNECTION
+					-->
+				<ion-slide>
+
+					<div
+						class="title"
+						translate="CALLINTROMODAL.CONNECTION.TITLE"
+						>
+					</div>
+
+					<div
+						class="call-graphic"
+						>
+						
+						<div 
+							class="call-icon active inactive call-person fa fa-user"
+							translate="CALLINTROMODAL.YOU"
+							>
+						</div>
+
+						<div 
+							class="call-arrow left fa fa-long-arrow-right"
+							>
+							<br />&nbsp;
+						</div>
+
+						<div class="call-icon ringing call-dc fa fa-phone">
+							<br />&nbsp;
+						</div>
+
+						<div 
+							class="call-arrow animated right fa fa-long-arrow-right"
+							>
+							<br />&nbsp;
+						</div>
+
+						<div 
+							class="call-icon call-person fa fa-user-med"
+							translate="CALLINTROMODAL.EXPERT"
+							>
+						</div>
+						
+					</div>
+
+					<div
+						class="intro-text"
+						translate="CALLINTROMODAL.CONNECTION.TEXT"
+						>						
+					</div>
+
+				</ion-slide>
+
+				<!--
+					- 4. CALL END
+					-->
+				<ion-slide>
+
+					<div
+						class="title"
+						translate="CALLINTROMODAL.END.TITLE"
+						>
+					</div>
+					
+					<div
+						class="call-graphic"
+						>
+						
+						<div 
+							class="call-icon inactive call-person fa fa-user"
+							translate="CALLINTROMODAL.YOU"
+							>
+						</div>
+
+						<div 
+							class="call-arrow left failed fa fa-long-arrow-left"
+							>
+							<br />&nbsp;
+						</div>
+
+						<div class="call-icon hang-up call-dc fa fa-phone">
+							<br />&nbsp;
+						</div>
+
+						<div 
+							class="call-arrow right failed fa fa-long-arrow-right"
+							>
+							<br />&nbsp;
+						</div>
+
+						<div 
+							class="call-icon inactive call-person fa fa-user-med"
+							translate="CALLINTROMODAL.EXPERT"
+							>
+						</div>
+						
+					</div>
+
+					<div
+						class="intro-text"
+						translate="CALLINTROMODAL.END.TEXT"
+						>
+					</div>
+
+				</ion-slide>
+
+				<!--
+					- 5. CALL FAIL
+					-->
+				<ion-slide>
+
+					<div
+						class="title"
+						translate="CALLINTROMODAL.FAIL.TITLE"
+						>						
+					</div>
+					
+					<div
+						class="call-graphic"
+						>
+
+						<div class="call-icon hang-up call-dc fa fa-phone">
+							<br />&nbsp;
+						</div>
+
+						<div 
+							class="call-arrow right failed fa fa-long-arrow-right"
+							>
+							<br />&nbsp;
+						</div>
+
+						<div 
+							class="call-icon call-person fa fa-user-med"
+							translate="CALLINTROMODAL.EXPERT"
+							>
+						</div>
+						
+					</div>
+
+					<div
+						class="intro-text"
+						translate="CALLINTROMODAL.FAIL.TEXT"
+						>
+						
+					</div>
+
+				</ion-slide>				
+
+			</ion-slide-box>
+
+			<!-- 
+				- Buttons
+				-->
+
+			<button
+				class="last dc-icon-button fa fa-chevron-left"
+				ng-class="{
+					hidden : callintro.isFirstSlide()
+				}"
+				ng-click="callintro.previousSlide()"
+				>
+				
+			</button>
+
+			<button
+				class="next dc-icon-button fa fa-chevron-right"
+				ng-class="{
+					hidden : callintro.isLastSlide()
+				}"
+				ng-click="callintro.nextSlide()"
+				>
+				
+			</button>
+
+			<button
+				class="next dc-icon-button fa fa-check scale-in-if"
+				ng-if="callintro.isLastSlide()"
+				ng-click="callintro.hideModal($parent.callIntroModal)"
+				>
+				
+			</button>
+
+			<button
+				class="close dc-icon-button fa fa-close"
+				ng-click="callintro.hideModal($parent.callIntroModal)"
+				>
+
+			</button>
+
+		</ion-content>
+
+	</div>
+
+</ion-modal-view>

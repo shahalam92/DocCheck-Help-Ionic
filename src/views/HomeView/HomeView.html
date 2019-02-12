@@ -1,0 +1,67 @@
+<ion-view class="home-view" view-title="{{home.title}}">
+
+  <ion-nav-bar align-title="center" class="bar-doccheck no-shadow">
+
+    <ion-nav-buttons side="right">
+      <button class="dc-header-button fa fa-warning scale-in-if" ng-if="home.disconnected" ng-click="home.showConnectivityPopover($event)">
+      </button>
+    </ion-nav-buttons>
+
+  </ion-nav-bar>
+
+  <ion-content scroll="false">
+
+    <dc-loading-spinner ng-if="(!home.timedOut && !(home.sortedExperts.length > 0) && !home.error.pending)" class="center">
+    </dc-loading-spinner>
+
+    <filter-picker class="animate-if" ng-if="home.sortedExperts.length > 0">
+    </filter-picker>
+
+    <div ng-if="home.error.pending && !(home.sortedExperts.length > 0)" class="load-error" translate="HOME.ERROR" translate-compile>
+
+    </div>
+
+    <ion-scroll prevent-scroll-click>
+
+      <ion-refresher on-refresh="home.fetchExperts(1, true)">
+      </ion-refresher>
+
+      <div class="wrapper animate-if" ng-class="{shown : home.sortedExperts.length > 0}">
+
+        <expert-listing-item expert="::expert" ng-repeat="
+					expert in home.sortedExperts |
+					expertFilter |
+					limitTo:home.infinite.max
+					track by expert.id
+				" ng-click="home.openProfile(expert.id, expert)">
+        </expert-listing-item>
+
+      </div>
+
+      <ion-infinite-scroll ng-if="home.infinite.max < home.sortedExperts.length" on-infinite="home.infiniteScroll()" spinner="spiral"
+        distance="50%">
+      </ion-infinite-scroll>
+
+    </ion-scroll>
+
+    <div class="timeout-overlay slide-in-up" ng-if="home.timedOut">
+      <div class="timeout-message" translate-once="HOME.TIMEOUT.MESSAGE">
+      </div>
+      <button type="button" class="dc-button dc-button-lightgreen timeout-button" translate-once="HOME.TIMEOUT.RETRY" ng-click="home.retryAfterTimeout()">
+      </button>
+    </div>
+
+  </ion-content>
+
+</ion-view>
+
+<script id="balancePopover.html" type="text/ng-template">
+  <ion-popover-view class="dc-popover">
+    <ion-content>
+    	<div
+				translate="HOME.BALANCE_POPOVER.TEXT"
+    		>
+    	</div>
+    </ion-content>
+  </ion-popover-view>
+</script>

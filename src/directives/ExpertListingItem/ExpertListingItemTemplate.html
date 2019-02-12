@@ -1,0 +1,45 @@
+<!-- DocListingItem directive template -->
+
+<expert-headline
+	expert="eli.expert()"
+	favorite-state="{{
+		eli.expert.favorite
+	}}"
+	>
+</expert-headline>
+
+<div
+	class="buttons standard-buttons"
+	>
+
+	<button
+		class="consultation-button call-button fa fa-phone"
+    ng-if="eli.expert().state === 'online'"
+		ng-click="eli.initCall($event)"
+		><!--ng-disabled="eli.expert.state"-->
+	</button>
+	<button
+		class="consultation-button chat-button fa fa-comment-ol"
+		ng-click="eli.initChat($event)"
+		>
+	</button>
+	<button
+		class="proposal-button fa fa-heart"
+		ng-click="eli.addFavorite($event)"
+		>
+	</button>
+
+</div>
+
+<div
+	class="buttons favorite-button negative"
+	ng-class="{negative : !eli.removalFlag}"
+	>
+
+	<button
+		class="fa fa-heart"
+		ng-click="eli.toggleFavoriteState($event)"
+		>
+	</button>
+
+</div>

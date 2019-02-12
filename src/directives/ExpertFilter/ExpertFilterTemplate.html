@@ -1,0 +1,37 @@
+<div 
+	class="input-wrapper" 
+	ng-class="
+	{
+		loading : !ef.fetched && !ef.error
+	}"
+	>
+
+	<div
+		class="filter-input" 		
+		ng-click="ef.openModal()"
+		placeholder="{{
+			::('EXPERTFILTER.PLACEHOLDER' | translate)
+		}}"
+		>
+		{{ef.disciplineModel}}
+
+		<span 
+			ng-if="!(ef.disciplineModel.length > 0)" 
+			translate="EXPERTFILTER.NOFILTER"
+			>			
+		</span>
+
+	</div>
+
+	<div 
+		class="show-popup"
+		ng-click="ef.openModal()"
+		>
+	</div>
+
+	<dc-loading-spinner
+		class="small center"
+		>
+	</dc-loading-spinner>
+
+</div>

@@ -1,0 +1,74 @@
+<!-- ConsultationListingItem directive template -->
+
+<!-- picture -->
+<img
+	class="avatar"
+	ng-src="{{
+		cli.consultation().expert_user.expert_profile.profile_image_medium
+	}}"
+	/>
+
+<!-- state button next to picture -->
+<button
+  ng-if="cli.consultation().expert_user.isFavorite"
+	class="state-button fa fa-heart {{cli.consultation().expert_user.state}}"
+>
+</button>
+
+<!-- content -->
+<div
+	class="details fa {{ ::cli.type }}"
+	ng-class="cli.getClasses()"
+	>
+
+	<!-- name -->
+	<div
+		class="name"
+		>
+
+		<span>
+			{{::cli.consultation().expert_user.expert_profile.full_name}}
+
+			<span
+				class="count"
+				animate-on-change="cli.consultation().unreadMessageCount"
+				animate-on-change-template="(##)"
+				>
+			</span>
+
+		</span>
+	</div>
+
+	<!-- last message -->
+	<div
+		class="text-consultation-content"
+		animate-on-change="cli.consultation().lastMessage.content"
+		>
+	</div>
+
+	<!-- stamp -->
+	<div
+		class="text-consultation-stamp"
+		animate-on-change="cli.consultation().formattedOrderCriterium"
+		>
+	</div>
+
+</div>
+
+<!-- button on the right -->
+<button
+	ng-class="
+	{
+		'fa-comment': cli.consultation().consultation_type.id == 1,
+		'fa-phone'  : cli.consultation().consultation_type.id == 2
+	}"
+	class="fa fa-chevron-right open-button"
+	>
+</button>
+
+<!-- debugging stuff -->
+<div
+	class="debug-info id"
+	>
+	{{cli.consultation().id}}
+</div>

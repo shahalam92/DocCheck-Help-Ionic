@@ -1,0 +1,29 @@
+<!-- FilterPicker directive template -->
+
+<div
+	class="picked"
+	ng-bind-html="picker.getInfoText()"
+	>
+</div>
+
+<!--
+  - DCX-1223
+  - 25.07.2017
+<div
+	class="dc-button picker-button fa "
+	ng-class="picker.getSortIcon()"
+	ng-click="picker.showSortModal()"
+	>
+
+</div>
+-->
+
+<div
+	class="dc-button picker-button fa fa-slider-horizontal"
+	ng-class="{
+		active: picker.isFilterActive()
+	}"
+	ng-click="picker.showFilterModal()"
+	>
+
+</div>

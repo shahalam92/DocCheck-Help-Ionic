@@ -1,0 +1,36 @@
+
+
+/* FilterPicker style */
+
+filter-picker
+{
+	@include -w-prefix(display, -flex);
+	@include -w-prefix(-flex, 0 0 auto);	
+	@include -w-prefix(-align-items, center);
+	
+	background-color: $dc_lightergray;
+	padding: 0;
+	box-shadow: $dc_boxshadow;
+	z-index: 10;
+	
+	.picked
+	{
+		@include -w-prefix(-flex, 1);
+		padding: 6px 12px;
+		font-size: $dc_big;
+	}
+
+	.picker-button
+	{
+		@include -w-prefix(-flex, 0 0 auto);
+		padding: 12px;
+		font-size: 20px;
+		color: $dc_darkgray;
+
+		&.active
+		{
+			color: $dc_red;
+		}
+	}
+
+}

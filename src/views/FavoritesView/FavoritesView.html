@@ -1,0 +1,96 @@
+<!-- Favorites view template -->
+
+<ion-view 
+	class="favorites-view"
+	view-title="{{::('FAVORITES.TITLE' | translate)}}"
+	hide-tabs="{{favorites.editFavorites}}"
+	>
+
+	<ion-nav-bar 
+		align-title="center" 
+		class="bar-doccheck">
+
+    <ion-nav-buttons side="left">
+    </ion-nav-buttons>
+    
+    <ion-nav-buttons side="right">
+    	<button 
+    		class="fa" 
+    		ng-if="(
+    			favorites.experts 
+    			| filter:{isFavorite:true}
+    		).length > 0"
+    		ng-class="{
+					'fa-pencil': !favorites.editFavorites, 
+					'fa-check' : favorites.editFavorites,
+					'disabled': favorites.experts.length == 0 
+    		}" 
+    		ng-click="favorites.toggleEditFavorites()"
+    		>
+    	</button>
+    </ion-nav-buttons>
+
+  </ion-nav-bar>
+
+	<ion-content 
+		ng-class="{'edit-favorites' : favorites.editFavorites}"
+		prevent-scroll-click
+		>	
+
+		<div 
+			class="no-favs"
+			ng-if="favorites.experts.length == 0"
+			translate-once="FAVORITES.NOFAVS"
+			>
+		</div>
+
+		<div
+			class="wrapper"
+			ng-if="favorites.experts.length > 0"
+			>
+
+			<expert-listing-item
+				ng-repeat="
+					expert in favorites.experts 
+					| filter:{isFavorite:true}
+					track by expert.id
+				"
+				ng-click="favorites.openProfile(expert)"
+				on-hold="favorites.toggleEditFavorites()"
+				expert="expert"
+				>
+			</expert-listing-item>
+
+		</div>
+
+		<div
+			class="wrapper"
+			>
+
+			<div
+				class="seperator"
+				translate-once="FAVORITES.PROPOSALS"
+				>
+			</div>
+
+			<!-- | orderBy:'rating_avg':true  -->
+			<!-- class="proposal" -->
+			<expert-listing-item				
+				ng-repeat="
+					expert in favorites.experts
+					| filter:{isFavorite:false}
+					| limitTo : 5
+					track by expert.id
+				"
+				class="proposal"
+				ng-click="favorites.openProfile(expert)"
+				on-hold="favorites.toggleEditFavorites()"
+				expert="expert"
+				>
+			</expert-listing-item>
+
+		</div>
+
+	</ion-content>
+
+</ion-view>

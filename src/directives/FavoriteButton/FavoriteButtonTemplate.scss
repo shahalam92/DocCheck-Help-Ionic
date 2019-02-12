@@ -1,0 +1,49 @@
+
+
+/* FavoriteButton style */
+
+favorite-button
+{
+	@include ng-if-scale-in-animation(300ms, 300ms);
+
+	display: block;
+
+	div.fa
+	{
+		@include ng-if-scale-in-animation(300ms, 300ms);
+
+		@include -w-prefix(display, -flex);
+		@include -w-prefix(-align-items, center);
+		@include -w-prefix(-justify-content, center);
+
+		height: 44px;		
+		color: $dc_darkgray;  	
+		font-size: $dc_big;
+		font-family: Roboto-Bold;
+
+		&:before
+		{
+			font-family: dc_icons;
+			font-size: 28px;
+			padding-right: 12px;
+		}
+
+		&.success
+		{
+			span
+			{
+				@include -w-prefix(-flex, 0 0 auto);
+				
+				max-width: 250px;
+				text-align: center;
+				line-height: 1.25em;
+			}
+			&:before
+			{
+				color: $dc_lightgreen;
+				padding-right: 4px;
+			}
+		}
+	}
+	
+}

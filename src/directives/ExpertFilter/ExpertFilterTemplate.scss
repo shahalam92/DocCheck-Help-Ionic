@@ -1,0 +1,120 @@
+
+
+/* ExpertFilter style */
+
+expert-filter
+{
+	box-shadow: $dc_boxshadow;
+	padding: 12px 0;
+	display: block;
+	color: $dc_darkgray;
+	background-color: $dc_lightergray;
+	position: relative;
+	z-index: 100;
+
+	.hint
+	{
+		display: none;
+
+		@include ng-if-height-animation(250px, 0.5, 0 30px 12px, 0 30px 12px);
+
+		font-size: $dc_big;
+		width: 100%;
+		padding: 0 30px 12px;
+		text-align: center;
+		line-height: 1.5em;
+
+		span, div
+		{
+			font-size: $dc_big;
+		}
+	}	
+
+	.close-hint
+	{
+		&:before
+		{
+			color: $dc_darkgray;
+		}
+
+		position: absolute;
+		right: 12px;
+		top: 12px;
+		padding: 0;
+		background: none;
+		border: none;
+		font-size: 18px;
+		font-weight: 700;
+	}
+
+	.input-wrapper
+	{
+		@include -w-prefix(display, -flex);
+		@include -w-prefix(-align-items, center);
+		background-color: white;
+		position: relative;
+		margin: 0 12px;
+		border: 1px solid $dc_gray;
+		min-height: 34px;
+
+		&.loading
+		{
+			dc-loading-spinner
+			{
+				display: block;
+				left: initial;
+				right: 6px;
+				bottom: 52%;
+				font-size: 12px;
+			}
+
+			.show-popup:after
+			{
+				display: none;
+			}
+		}
+
+		dc-loading-spinner
+		{
+			display: none;
+			background-color: white;
+		}
+
+		.filter-input
+		{
+			@include -w-prefix(-flex, 1);
+			-webkit-appearance: none;
+			width: 100%;
+			padding: 4px 36px 4px 12px;
+			color: black;
+			background-color: $dc_white;
+			//font-weight: 700;
+			font-family: Roboto-Bold;
+			font-size: $dc_big;
+			border-radius: 0;
+		}
+
+		.show-popup
+		{
+			@include -w-prefix(-flex, 0 0 32px);
+
+			&:after
+			{
+				@include -w-prefix(display, -flex);
+				@include -w-prefix(-justify-content, center);
+				@include -w-prefix(-align-items, center);
+
+				color: black;
+		    content: "\f011\A\f012";
+		    font-family: dc_icons;
+		    font-size: 24px;
+
+				width: 32px;
+		    height: 32px;
+		    
+		    white-space: pre;
+		    line-height: .5em;
+			}
+		}
+	}
+}

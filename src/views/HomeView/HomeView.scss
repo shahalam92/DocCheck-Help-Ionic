@@ -1,0 +1,98 @@
+.home-view {
+  ion-header-bar {
+    button.stats.dc-header-button {
+      position: relative;
+      padding: 0;
+      font-size: $dc-bigger;
+      font-family: Roboto-Bold;
+      width: 48px;
+
+      &:before {
+        opacity: 0.7;
+      }
+    }
+  }
+
+  ion-content {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+
+    .wrapper {
+      @include -w-prefix(-transition, opacity ease-in-out 300ms 1000ms);
+      @include -w-prefix(-transform, translateY(-100%));
+      opacity: 0;
+
+      &.shown {
+        @include -w-prefix(-transform, translateY(0));
+        opacity: 1;
+      }
+    }
+
+    .load-error {
+      @include -w-prefix(display, -flex);
+      @include -w-prefix(-flex-direction, column);
+      @include -w-prefix(-align-items, center);
+      @include -w-prefix(-justify-content, center);
+      text-align: center;
+      padding: 24px;
+      height: 100%;
+    }
+  }
+
+  expert-filter {
+    -webkit-flex: 0 0 auto;
+    flex: 0 0 auto;
+  }
+
+  ion-scroll {
+    -webkit-flex: 1;
+    flex: 1;
+  }
+
+  ion-infinite-scroll {
+    @include -w-prefix(-transition-delay, 300ms);
+  }
+
+  .timeout-overlay {
+    background-color: $dc_lightergray;
+    box-shadow: $dc_boxshadow;
+    padding: 16px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    transform: translate3d(0, 0, 0);
+    transition: all cubic-bezier(0.1, 0.7, 0.1, 1) 400ms;
+    z-index: 100;
+
+    &.ng-enter,
+    & > .ng-enter {
+      transform: translate3d(0, 100%, 0);
+    }
+    &.ng-enter-active,
+    & > .ng-enter-active {
+      transform: translate3d(0, 0, 0);
+    }
+
+    &.ng-leave,
+    & > .ng-leave {
+      transform: translate3d(0, 0, 0);
+    }
+    &.ng-leave-active,
+    & > .ng-leave-active {
+      transform: translate3d(0, 100%, 0);
+    }
+
+    .timeout-message {
+      font-size: $dc_base;
+    }
+
+    .timeout-button {
+      display: block;
+      margin: 16px auto 8px;
+    }
+  }
+}

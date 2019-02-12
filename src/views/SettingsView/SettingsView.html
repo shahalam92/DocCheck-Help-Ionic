@@ -1,0 +1,268 @@
+<!-- Settings view template -->
+
+<ion-view
+	class="settings-view"
+	view-title="{{::('SETTINGS.TITLE' | translate)}}"
+	>
+
+	<ion-nav-bar align-title="center" class="bar-doccheck">
+
+    <ion-nav-buttons side="left">
+    </ion-nav-buttons>
+
+    <ion-nav-buttons side="right">
+    </ion-nav-buttons>
+
+  </ion-nav-bar>
+
+	<ion-content>
+
+		<div
+			class="seperator"
+			ng-if="settings.authenticated == true && settings.user.email"
+			translate="SETTINGS.SIGNED_IN_AS"
+			translate-values="{
+				email : settings.user.email
+			}"
+			>
+		</div>
+
+		<settings-listing-item
+			ng-click="settings.authentication()"
+			class="login"
+			ng-if="settings.authenticated != undefined"
+			ng-class="{
+				'authenticated' : settings.authenticated
+			}"
+		>
+			<span class="text out" translate-once="SETTINGS.SIGN_OUT"></span>
+			<span class="text in" translate-once="SETTINGS.SIGN_IN"></span>
+			<span class="icon out fa fa-logout"></span>
+			<span class="icon in fa fa-login"></span>
+		</settings-listing-item>
+		<settings-listing-item
+			ng-if="settings.authenticated && settings.user.email"
+			ng-click="settings.showEmailChangePopup()"
+			>
+			<span class="text" translate-once="SETTINGS.CHANGE_EMAIL"></span>
+			<span class="icon fa fa-pencil"></span>
+		</settings-listing-item>
+		<div class="seperator" translate-once="SETTINGS.SEPERATOR_INFORMATION"></div>
+    <settings-listing-item
+       ui-sref="^.newsfeed"
+      >
+      <span class="text" translate-once="SETTINGS.NEWSFEED"></span>
+      <span class="badge" ng-if="settings.unreadNewsfeedCount > 0">
+        {{settings.unreadNewsfeedCount}}
+      </span>
+      <span class="icon fa fa-chevron-right"></span>
+    </settings-listing-item>
+		<settings-listing-item>
+			<span
+				class="text"
+				translate-once="SETTINGS.GUIDED_TOUR"
+				ng-click="settings.showGuidedTour()"
+				>
+			</span>
+			<span class="icon fa fa-chevron-right"></span>
+		</settings-listing-item>
+		<settings-listing-item
+			ui-sref="^.hints"
+			>
+			<span class="text" translate-once="SETTINGS.HINTS"></span>
+			<span class="icon fa fa-chevron-right"></span>
+		</settings-listing-item>
+		<settings-listing-item
+			ui-sref="^.terms"
+			>
+			<span class="text" translate-once="SETTINGS.TERMS"></span>
+			<span class="icon fa fa-chevron-right"></span>
+    </settings-listing-item>
+    <settings-listing-item
+      ui-sref="^.privacy"
+      >
+      <span class="text" translate-once="SETTINGS.PRIVACY"></span>
+      <span class="icon fa fa-chevron-right"></span>
+    </settings-listing-item>
+		<settings-listing-item
+			ui-sref="^.contact"
+			ng-if="settings.authenticated && settings.user.email"
+			>
+			<span class="text" translate-once="SETTINGS.CONTACT"></span>
+			<span class="icon fa fa-chevron-right"></span>
+		</settings-listing-item>
+		<settings-listing-item
+			ng-click="settings.openImpress()"
+			>
+			<span class="text" translate="SETTINGS.IMPRESS"></span>
+			<span class="icon fa fa-chevron-right"></span>
+		</settings-listing-item>
+		<settings-listing-item
+			ui-sref="^.promotion"
+			>
+			<span class="text" translate-once="SETTINGS.PROMOTION"></span>
+			<span class="icon fa fa-chevron-right"></span>
+		</settings-listing-item>
+		<settings-listing-item
+			ng-if="settings.user.is_test_user == 1"
+			ng-click="settings.sendLogfile()"
+			>
+			<span class="text" translate-once="SETTINGS.SEND_LOG"></span>
+			<span class="icon fa fa-chevron-right"></span>
+		</settings-listing-item>
+		<!--
+		<settings-listing-item>
+			<span class="text" translate-once="SETTINGS.RATE"></span>
+			<span class="icon fa fa-chevron-right"></span>
+		</settings-listing-item>
+		-->
+
+	</ion-content>
+
+</ion-view>
+
+<script id="emailActivationHintPopover.html" type="text/ng-template">
+  <ion-popover-view class="dc-popover">
+    <ion-content>
+    	<div
+				translate-once="SETTINGS.EMAIL_ACTIVATION_POPOVER.TEXT"
+    		>
+    	</div>
+    </ion-content>
+  </ion-popover-view>
+</script>
+
+<script id="emailActivationPopover.html" type="text/ng-template">
+
+  <div
+  	class="token-hint hide-on-keyboard-open"
+		translate-once="SETTINGS.EMAIL_ACTIVATION_POPUP.TOKEN_HINT"
+  	>
+  </div>
+
+  <input
+  	class="token-input dc-input"
+  	type="text"
+  	placeholder="{{::('SETTINGS.EMAIL_ACTIVATION_POPUP.TOKEN_PLACEHOLDER' | translate)}}"
+  	maxlength="4"
+  	ng-model="vm.activationToken"
+  	/>
+
+  <div
+  	ng-if="!vm.resent"
+  	class="resend-activation-mail"
+  	translate-once="SETTINGS.EMAIL_ACTIVATION_POPUP.RESEND"
+  	ng-click="vm.resendActivationMail()"
+  	>
+  </div>
+
+  <div
+  	class="error dc-red"
+  	ng-if="vm.emailActivation.error"
+  	ng-bind="vm.emailActivation.error"
+  	>
+  </div>
+
+	<!--
+  <div
+  	class="fa fa-envelope-ol request-new-token dc-red"
+  	ng-click="vm.requestNewToken()"
+  	translate-once="SETTINGS.EMAIL_ACTIVATION_POPUP.REQUEST_NEW_TOKEN"
+  	>
+  </div>
+  -->
+
+  <div
+  	class="popup-buttons"
+  	>
+
+		<button
+			class="dc-button dc-button-gray"
+			translate-once="SETTINGS.EMAIL_ACTIVATION_POPUP.CANCEL"
+			ng-click="vm.emailActivationPopup.close(); vm.resent = false"
+			>
+		</button>
+
+		<button
+			class="dc-button dc-button-lightgreen"
+			translate-once="SETTINGS.EMAIL_ACTIVATION_POPUP.CONFIRM"
+			ng-click="vm.submitEmailActivation()"
+			ng-disabled="!(vm.activationToken.length >= 4)"
+			>
+		</button>
+
+  </div>
+
+</script>
+
+<script id="emailChangePopup.html" type="text/ng-template">
+
+  <div
+  	class="token-hint hide-on-keyboard-open"
+		translate-once="SETTINGS.EMAIL_CHANGE_POPUP.HINT"
+  	>
+  </div>
+
+  <form
+		ng-submit="vm.submitEmailChange()"
+  	>
+
+		<input
+			class="token-input dc-input"
+			type="email"
+			placeholder="{{::('SETTINGS.EMAIL_CHANGE_POPUP.CURRENT_MAIL_PLACEHOLDER' | translate)}}"
+			ng-model="vm.user.email"
+			disabled="disabled"
+			autocorrect="off"
+			autocapitalize="off"
+			spellcheck="false"
+			/>
+
+	  <input
+	  	class="token-input dc-input"
+	  	type="email"
+	  	placeholder="{{::('SETTINGS.EMAIL_CHANGE_POPUP.NEW_MAIL_PLACEHOLDER' | translate)}}"
+	  	ng-model="vm.changeEmailNew"
+	  	autocorrect="off"
+	  	autocapitalize="off"
+	  	spellcheck="false"
+	  	/>
+
+	  <input
+	  	class="token-input dc-input"
+	  	type="password"
+	  	placeholder="{{::('SETTINGS.EMAIL_CHANGE_POPUP.PASSWORD_PLACEHOLDER' | translate)}}"
+	  	ng-model="vm.changeEmailPassword"
+	  	/>
+
+	  <div
+	  	class="error"
+	  	dc-compile="vm.changeEmail.error"
+	  	>
+	  </div>
+
+	  <div
+	  	class="popup-buttons"
+	  	>
+
+			<button
+				type="button"
+				class="dc-button dc-button-gray"
+				translate-once="SETTINGS.EMAIL_CHANGE_POPUP.CANCEL"
+				ng-click="vm.hideEmailChangePopup()"
+				>
+			</button>
+
+			<button
+				type="submit"
+				class="dc-button dc-button-lightgreen"
+				translate-once="SETTINGS.EMAIL_CHANGE_POPUP.CONFIRM"
+				ng-disabled="!(vm.changeEmailPassword.length > 0)"
+				>
+			</button>
+
+	  </div>
+
+	 </form>
+
+</script>

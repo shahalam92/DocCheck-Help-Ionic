@@ -1,0 +1,141 @@
+<!-- Rating view template -->
+
+<ion-view
+	class="rating-view"
+	view-title="{{::('RATING.TITLE' | translate)}}"
+	hide-tabs
+	>
+
+	<ion-nav-bar align-title="center" class="bar-doccheck">
+
+    <ion-nav-back-button>
+    </ion-nav-back-button>
+
+    <ion-nav-buttons side="right">
+    </ion-nav-buttons>
+
+  </ion-nav-bar>
+
+	<ion-content scroll="false">
+
+		<div class="rating-headline hide-on-keyboard-open">
+
+			<expert-headline
+				class=""
+				expert="rating.expert"
+			>
+			</expert-headline>
+
+		</div>
+
+		<!-- writing rating -->
+
+		<div
+			class="rating-content editable"
+			ng-if="!rating.consultation.review.rating_points"
+			>
+
+			<div class="rating hide-on-keyboard-open">
+				<span
+					translate-once="RATING.QUESTION"
+					>
+				</span>
+
+				<dc-rating
+					editable="true"
+					model="rating.points"
+				>
+				</dc-rating>
+			</div>
+
+      <textarea
+        maxlength="2000"
+				class="comment"
+				ng-model="rating.comment"
+				ng-disabled="rating.hiding"
+				placeholder="{{::('RATING.COMMENT_PLACEHOLDER' | translate)}}"
+			></textarea>
+
+			<div class="buttons">
+				<favorite-button
+					class="hide-on-keyboard-open"
+					ng-if="!rating.expert.isFavorite"
+					expert="rating.expert"
+					>
+				</favorite-button>
+
+				<button
+					class="rating-done dc-button-block dc-button-lightgreen show-on-keyboard-open"
+					translate-once="RATING.DONE"
+					ng-click="rating.hideKeyboard( $event )"
+					>
+				</button>
+
+				<button
+					class="rating-done dc-button-block dc-button-lightgreen hide-on-keyboard-open"
+					ng-class="{
+						disabled : rating.points == 0
+					}"
+					ng-disabled="!(rating.points > 0)"
+					translate-once="RATING.DONE"
+					ng-click="rating.submitRating( $event )"
+					>
+				</button>
+			</div>
+
+		</div>
+
+		<!-- showing given rating -->
+
+		<div
+			class="rating-content present"
+			ng-if="rating.consultation.review.rating_points"
+			>
+
+			<div class="rating">
+				<span
+					translate-once="RATING.HEADLINE"
+					>
+				</span>
+
+				<dc-rating
+					editable="false"
+					model="rating.consultation.review.rating_points"
+				>
+				</dc-rating>
+			</div>
+
+			<div
+				class="comment"
+				>
+				<span
+					class="no-comment"
+					ng-if="rating.consultation.review.comment.length == 0"
+					translate-once="RATING.NOCOMMENT"
+					>
+				</span>
+				<span
+					ng-bind-html="rating.consultation.review.comment"
+					>
+				</span>
+			</div>
+
+			<div class="buttons">
+				<favorite-button
+					ng-if="!rating.expert.isFavorite"
+					expert="rating.expert"
+					>
+				</favorite-button>
+				<button
+					class="rating-done dc-button-block dc-button-lightgreen"
+					translate-once="RATING.BACK"
+					ng-click="rating.back()"
+					>
+				</button>
+			</div>
+
+		</div>
+
+	</ion-content>
+
+</ion-view>

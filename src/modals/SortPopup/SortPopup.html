@@ -1,0 +1,22 @@
+<div
+	class="sort-popup-content"
+	ng-controller="SortPopupCtrl as sort"
+	>
+
+	<button
+		class="sort-item {{ ::item.icon }}"
+		ng-repeat="item in sort.items"
+		ng-click="sort.set( $event, $index )"
+		ng-class="{
+			active : $index == sort.current
+		}"
+		>
+
+		<span
+			translate="SORTPOPUP.{{ ::item.label }}"
+			>
+		</span>
+
+	</button>
+
+</div>

@@ -1,0 +1,37 @@
+
+
+/* DcPin style */
+
+dc-pin
+{
+	@include -w-prefix(display, -flex);	
+	@include -w-prefix(-justify-content, flex-start);
+	@include -w-prefix(-align-items, center);
+	position: relative;
+	max-width: 375px;
+
+	.label
+	{
+		@include -w-prefix(-flex, 0 0 48px);
+
+		font-size: $dc_bigger;
+
+		color: $dc_darkgray;
+	}
+
+	.diget-wrapper
+	{
+		@include -w-prefix(-flex, 0 0 auto);
+		margin-right: 12px;
+
+		.diget
+		{
+			font-family: Roboto-Bold;
+			width: 48px;
+			margin: 0 auto 0 0;
+			text-align: center;
+			font-size: 24px;
+			color: $dc_darkgray;
+		}
+	}
+}

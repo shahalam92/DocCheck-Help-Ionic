@@ -1,0 +1,295 @@
+/* InitConsultation style */
+
+.init-consultation-view {
+  .api-error {
+    @include -w-prefix(-flex, 1);
+    @include -w-prefix(display, -flex);
+    @include -w-prefix(-flex-direction, column);
+    @include -w-prefix(-align-items, center);
+
+    position: relative;
+    padding: 24px;
+
+    .text {
+      font-size: $dc_big;
+    }
+
+    .dc-button-block {
+      margin: 12px 0 0;
+    }
+  }
+
+  .fa-chevron-right {
+    margin-left: 4px;
+  }
+
+  .wrapper {
+    .active-consultation-hint {
+      @include -w-prefix(display, -flex);
+      @include -w-prefix(-align-items, center);
+      position: relative;
+
+      padding: 6px 24px;
+
+      color: $dc_lightgreen;
+      font-family: Roboto-Bold;
+      line-height: $dc_bigger;
+
+      &:before {
+        margin-right: 8px;
+        font-size: 14px;
+      }
+    }
+
+    .call-intro {
+      padding: 6px 24px 0;
+      color: $dc_darkgray;
+
+      &:before {
+        margin-right: 12px;
+      }
+    }
+
+    .voucher-input-wrapper,
+    .payment-types {
+      display: none;
+    }
+
+    .already-paid {
+      display: block;
+    }
+
+    &.payment .voucher-input-wrapper,
+    &.payment .payment-types {
+      display: block;
+    }
+
+    &.payment .already-paid {
+      display: none;
+    }
+  }
+
+  .scroll {
+    @include -w-prefix(display, -flex);
+    @include -w-prefix(-flex-direction, column);
+  }
+
+  expert-headline {
+    @include -w-prefix(-flex, 0 0 auto);
+  }
+
+  .error-text,
+  .wrapper {
+    @include -w-prefix(-flex, 1);
+  }
+
+  .dc-headline {
+    @include -w-prefix(display, -flex);
+    margin: 24px 24px 0;
+
+    .headline {
+      @include -w-prefix(-flex, 1);
+    }
+
+    .price {
+      @include -w-prefix(-flex, 0 0 auto);
+    }
+  }
+
+  .seperator {
+    background-color: $dc_lightergray;
+    font-weight: 700;
+    padding: 10px 16px;
+    font-size: 1.1em;
+    font-weight: 700;
+  }
+
+  ul {
+    padding: 12px 0 0 24px;
+    //line-height: 2em;
+    font-size: 1.1em;
+
+    &.payment-types {
+      padding-top: 24px;
+    }
+
+    .headline {
+      padding-left: 24px;
+      font-weight: bold;
+    }
+
+    li {
+      @include -w-prefix(display, -flex);
+      @include -w-prefix(-align-items, center);
+      list-style-type: none;
+      margin: 12px 0 0;
+
+      &:before {
+        @include -w-prefix(-flex, 0 0 30px);
+        font-family: dc_icons !important;
+        content: '\f069';
+        width: 30px;
+
+        @media screen and (max-width: 320px) {
+          width: 24px;
+        }
+
+        color: $dc_lightgreen;
+        font-size: 14px;
+        font-weight: bold;
+      }
+
+      &.selected:before {
+        content: '\f460';
+      }
+
+      &.not-selected:before {
+        color: $dc_black;
+        content: '\f455';
+      }
+
+      img {
+        margin-bottom: -4px;
+        margin-left: 4px;
+        height: 1.5em;
+      }
+    }
+  }
+
+  .already-paid {
+    color: $dc_darkgray;
+    padding: 24px 24px 0;
+    font-size: $dc_bigger;
+  }
+
+  .voucher-input-wrapper {
+    padding: 6px 24px 12px;
+
+    input {
+      @include -w-prefix(-transition, opacity ease-in-out 300ms);
+
+      width: 100%;
+      padding: 0;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      font-size: $dc_big;
+
+      border: 1px solid $dc_darkgray;
+      //border-radius: 6px;
+
+      text-align: center;
+
+      &::-webkit-input-placeholder {
+        text-transform: none;
+        letter-spacing: initial;
+      }
+
+      &[disabled='disabled'] {
+        opacity: 0.5;
+      }
+    }
+  }
+
+  .error {
+    font-size: $dc_big;
+    padding: 0 24px 0;
+
+    color: $dc_red;
+  }
+
+  dc-checkbox {
+    padding: 0 24px;
+    margin: 12px 0 12px;
+
+    label {
+      display: -webkit-flex;
+      display: flex;
+
+      &:before {
+        position: relative;
+        -webkit-flex: 0 0 auto;
+        flex: 0 0 auto;
+      }
+
+      .text {
+        line-height: 1.25em;
+        font-size: 1.1em;
+      }
+    }
+
+    .fa-box-checked {
+      color: $dc_lightgreen;
+    }
+  }
+
+  .checkbox-wrapper {
+    display: flex;
+    position: relative;
+    margin-top: $dc_dist * 3;
+
+    .checkbox-overlay {
+      flex: 1;
+      line-height: 1.5;
+      padding-right: $dc-dist * 2;
+    }
+
+    dc-checkbox {
+      flex: 0 0 $dc-dist * 3;
+      padding: 0 $dc-dist 0 $dc-dist * 2;
+      width: $dc-dist * 5;
+    }
+
+    dc-checkbox label:before {
+      position: relative;
+      z-index: 100;
+    }
+  }
+
+  .button-wrapper {
+    margin-top: 24px;
+    padding: 0 24px;
+
+    .dc-button-block {
+      margin: 12px 0 4px;
+    }
+  }
+
+  .hint {
+    padding: $dc_dist $dc_dist * 2;
+    font-size: 0.9em;
+    line-height: 1.25em;
+    color: $dc_darkgray;
+    text-align: center;
+  }
+
+  .warranty {
+    padding: 8px 24px;
+    font-size: $dc_big;
+    font-family: Roboto-Bold;
+  }
+}
+
+.paypal-popup {
+  .popup {
+    width: 90%;
+  }
+
+  input {
+    border-bottom: 1px solid black;
+    border-top: 1px solid black;
+    border-radius: 4px;
+
+    background-color: rgba(128, 128, 128, 0.1);
+
+    text-align: center;
+  }
+
+  button.button-positive {
+    background-color: $dc_red;
+    color: white;
+
+    &.activated {
+      background-color: $dc_darkred;
+    }
+  }
+}

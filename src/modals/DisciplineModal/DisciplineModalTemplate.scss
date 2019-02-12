@@ -1,0 +1,249 @@
+ 
+
+.discipline-modal
+{
+	width: initial;
+	height: initial;
+	min-height: initial;
+	left: 12px;
+	right: 12px;
+	top: 0;
+	bottom: 24px;
+
+	background-color: rgba(255,255,255,0.8);
+
+	&.slide-in-up
+	{
+		&:not(.ng-enter-active)
+		{
+			@include -w-prefix(-transform, translate3d(0, 200%, 0));
+		}
+	}
+
+	&.no-header
+	{
+		top: 88px;
+
+		ion-header-bar
+		{
+			display: none;
+		}
+
+		ion-content.has-header
+		{
+			top: 0;
+		}
+	}
+
+	&.no-boxes .fa-box-empty:before, 
+	&.no-boxes .fa-box-checked:before
+	{
+		opacity: 0;
+	}
+
+	ion-content
+	{
+		@include -w-prefix(display, -flex);
+		@include -w-prefix(-flex-direction, column);
+
+		.all-disciplines, .discipline-item
+		{
+			font-size: 1.25em;
+			border-color: $dc_lightgray;
+			background-color: transparent;
+			border-color: rgba(255,255,255,0.4);
+			white-space: initial;
+			overflow: visible;
+			padding-right: 0;
+			padding-left: 0;
+			padding-bottom: 0;
+
+			&.selected
+			{
+				font-family: Roboto-Bold;
+				color: $dc_red;
+
+				.discipline-item:not(.selected)
+				{
+					font-family: Roboto;
+					color: black;
+				}
+			}
+
+			.icon
+			{
+				display: none;
+			}
+			
+			&.expandable 
+			{
+				font-family: Roboto-Bold;
+
+				.icon
+				{
+					display: block;
+				}
+
+				ion-item
+				{
+					font-family: Roboto;
+				}
+			}
+
+			.icon 
+			{
+				@include -w-prefix(-transition, -transform ease-in-out 150ms);
+
+				position: absolute;
+				right: 0;
+				top: 10px;
+				height: 32px;
+				width: 32px;
+				line-height: 32px;
+				text-align: center;
+				text-indent: 0;
+			}
+
+			.discipline-name
+			{
+				padding-left: 24px;
+				padding-bottom: 16px;
+				padding-right: 36px;
+			}
+
+			.discipline-item
+			{
+				font-size: 1em;
+				width: 100%;
+				border-right: none;
+				border-left: none;
+				border-bottom: none;
+				background-color: rgba(255,255,255,0.3);
+
+				.discipline-name
+				{
+					padding-left: 32px;
+				}
+			}
+
+			&.fa
+			{
+				line-height: inherit;
+				display: inherit;
+			}
+
+			&.fa-box-checked
+			{
+				color: $dc_red;
+				font-family: Roboto-Bold;
+			}
+
+			&:before
+			{
+				position: absolute;
+				right: 12px;
+				width: 32px;
+				text-align: center;
+			}
+
+			&.expanded .icon
+			{
+				@include -w-prefix(-transform, rotateZ(90deg));
+			}
+
+			&.fa-box-checked:before
+			{
+				font-size: 18px;
+				right: 10px;
+			}
+
+			&.fa-box-empty:before
+			{
+				right: 10px;
+				font-size: 18px;				
+				font-weight: 700;
+				color: rgba(0,0,0,0.3)
+			}
+
+			&.heading
+			{
+				font-family: Roboto-Bold;
+				padding: 8px 16px;
+				background-color: rgba(255,255,255,0.2);
+			}
+
+			&.child
+			{
+				//padding-left: 36px;
+				background-color: rgba(255,255,255,0.4);
+			}
+			
+		}
+
+		.all-disciplines
+		{
+			padding-bottom: 16px;
+			padding-left: 24px;
+
+			&.fa-box-checked:before, &.fa-box-empty:before
+			{
+				right: 16px;
+			}
+		}
+
+		ion-scroll
+		{
+			-webkit-flex: 1;
+			flex: 1;
+
+			&::-webkit-scrollbar
+			{
+				width: 5px;
+			}
+			&::-webkit-scrollbar-track 
+			{ 
+			}
+			&::-webkit-scrollbar-thumb 
+			{ 
+				background: $dc_red;
+			}
+			&::-webkit-scrollbar-thumb:window-inactive 
+			{
+				background: $dc_darkgray;
+			}
+
+			.level
+			{
+				@include -w-prefix(display, -flex);
+				@include -w-prefix(-align-items, center);
+				min-height: 48px;
+				padding: 0 12px;
+				font-size: 1.1em;
+				width: 100%;
+				border-bottom: 2px solid $dc_lightergray;
+				border-top: 2px solid $dc_lightergray;
+
+				&.fa
+				{
+					line-height: inherit;
+					color: $dc_red;
+				}
+
+				&:before
+				{
+					font-family: dc_icons;
+					position: absolute;
+					right: 12px;
+					top: 50%;
+					margin-top: -8px;
+					font-size: 16px;
+				}
+			}
+
+			.level0
+			{
+				font-family: Roboto-Bold;
+			}
+		}
+	}
+}

@@ -1,0 +1,202 @@
+
+
+/* DocListingItem style */
+
+expert-listing-item
+{
+  display: block;
+  position: relative;
+  width: 100%;
+
+  &.activated
+  {
+    @include -w-prefix(-transition, opacity ease-in-out 100ms);
+    opacity: .75;
+  }
+
+  expert-headline
+  {
+    //margin: 18px 12px;
+    //box-shadow: $dc_boxshadow;
+    padding-bottom: 18px;
+    background-color: white;
+    //background-color: $dc_lightergray;
+  }
+  
+  .buttons
+  {
+    position: absolute;
+    z-index: 10;
+    right: 12px;
+    //right: 24px;
+    bottom: 24px;
+
+    .proposal-button
+    {
+      display: none;
+    }
+
+    &.standard-buttons
+    {
+      @include -w-prefix(-transition, -transform cubic-bezier(.10,.50,.50,.90) 150ms 200ms);
+      @include -w-prefix(-transform, rotateX(0));
+    }
+
+    &.favorite-button
+    {
+      @include -w-prefix(-transition, -transform cubic-bezier(.10,.50,.50,.90) 150ms);
+      @include -w-prefix(-transform, rotateX(90deg));
+      opacity: 1;
+
+      button
+      {
+        position: relative;
+      }
+
+      button:after
+      {
+        @include -w-prefix(-transition, transform ease-in-out 300ms);
+        @include -w-prefix(-transform, scale(0));
+        
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        font-family: 'dc_icons';
+        content: "\f064";
+        color: $dc_lightgreen;
+        font-size: 14px;
+        font-weight: 700;
+        padding-top: 12px;
+      }
+
+      &:not(.negative) button:after
+      {
+        @include -w-prefix(-transform, scale(1));
+      }
+    }    
+
+    &.negative button
+    {
+      background-color: $dc_darkgray;
+      color: $dc_lightergray;
+    }
+
+    button
+    {
+      @include -w-prefix(-transition, background-color cubic-bezier(.10,.50,.50,.90) 300ms);
+
+      box-shadow: $dc_boxshadow;
+
+      background-color: #9c3;
+      border: 0;
+      width: 40px;
+      height: 40px;
+      border-radius: 100%;
+      font-size: 24px;
+      color: white;
+      margin-left: 4px;
+      padding: 0;
+
+      &[disabled="disabled"]
+      {
+        opacity: 0.3;
+      }   
+    }
+
+    .consultation-button.negative
+    {
+      background-color: $dc_lightgray;
+      color: $dc_white;
+    }
+  }
+  
+  /*
+  &.proposal
+  {
+    .consultation-button
+    {
+      display: none;
+    }
+
+    .proposal-button
+    {
+      display: block;
+    }
+  }
+  */
+
+  &:nth-of-type(even)
+  {
+    .favorite-button, .state-button, expert-headline
+    {
+      background-color: $dc_lightergray;
+    }
+  }
+
+  @media screen and (min-width: 768px)
+  {
+    display: inline-block;
+    width: 50%;
+
+    &:nth-of-type(even)
+    {
+      &, .favorite-button, .state-button
+      {
+        background-color: white;
+      }
+    }
+
+    &:nth-of-type(4n+2), &:nth-of-type(4n+3)
+    {
+      &, .favorite-button, .state-button
+      {
+        background-color: $dc_lightergray;
+      }   
+    }
+  }
+
+  @media screen and (min-width: 1024px)
+  {
+    width: 33%;
+
+    &:nth-of-type(even)
+    {
+      &, .favorite-button, .state-button
+      {
+        background-color: white;
+      }
+    }
+
+    &:nth-of-type(2n+1), &:nth-of-type(4n+3)
+    {
+      &, .favorite-button, .state-button
+      {
+        background-color: $dc_lightergray;
+      }   
+    }
+  }
+}
+
+.edit-favorites expert-listing-item:not(.proposal) .buttons, 
+expert-listing-item.edit-favorites:not(.proposal) .buttons
+{
+  &.standard-buttons
+  {
+    @include -w-prefix(-transition, all cubic-bezier(.10,.50,.50,.90) 150ms);
+    @include -w-prefix(-transform, rotateX(90deg)); 
+  }
+
+  &.favorite-button
+  {
+    opacity: 1;
+    @include -w-prefix(-transition, all cubic-bezier(.10,.50,.50,.90) 150ms 200ms);
+    @include -w-prefix(-transform, rotateX(0deg));
+  }
+}
+
+.edit-favorites expert-listing-item:not(.proposal) expert-headline[favorite-state="false"]
+{
+  opacity: 0.5;
+}

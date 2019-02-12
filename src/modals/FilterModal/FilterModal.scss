@@ -1,0 +1,404 @@
+ion-modal-view.filter-modal
+{
+	background: transparent;
+	width: 100%;
+	height: 100%;
+
+	.filter-modal-content-wrapper
+	{
+		@include -w-prefix(display, -flex);
+		@include -w-prefix(-align-items, center);
+		@include -w-prefix(-justify-content, center);
+
+		width: 100%;
+		height: 100%;
+		padding: 24px;
+
+		.filter-header, .filter-buttons
+		{
+			padding-left: 12px;
+			padding-right: 12px;
+		}
+
+		.filter-modal-content
+		{
+			background-color: white;
+			border-radius: 4px;
+			box-shadow: $dc_boxshadow;
+			max-height: 80%;
+			min-width: 320px;
+			max-width: 375px;
+			position: relative;
+
+			@media screen and ( max-width: 320px )
+			{
+				min-width: 300px;
+			}
+
+			@include -w-prefix(-transition,
+				"-transform ease-in-out 450ms, "
+				"opacity ease-in-out 150ms 150ms"
+			);
+
+			&.ng-leave,
+			&.ng-enter.ng-enter-active
+			{
+				z-index: -1;
+				opacity: 1;
+			}
+
+			&[ng-switch-when="1"].ng-leave,
+			&[ng-switch-when="0"].ng-enter
+			{
+				@include -w-prefix(-transform, translate3d(-50%, 0, 1px));
+			}
+
+			&[ng-switch-when="0"].ng-leave,
+			&[ng-switch-when="1"].ng-enter
+			{
+				@include -w-prefix(-transform, translate3d(50%, 0, 1px));
+			}
+
+			&[ng-switch-when="0"].ng-leave.ng-leave-active,
+			&[ng-switch-when="0"].ng-enter
+			{
+				@include -w-prefix(-transform, translate3d(-100%, 0, 1px));
+				opacity: .0;
+			}
+
+			&[ng-switch-when="1"].ng-leave.ng-leave-active,
+			&[ng-switch-when="1"].ng-enter
+			{
+				@include -w-prefix(-transform, translate3d(100%, 0, 1px));
+				opacity: .0;
+			}
+
+			.filter-header, .filter-buttons
+			{
+				box-shadow: $dc_boxshadow;
+				z-index: 100;
+			}
+
+			.filter-header
+			{
+				@include -w-prefix(display, -flex);
+				@include -w-prefix(-align-items, flex-end);
+				font-size: $dc_head;
+				padding: 12px 12px 4px;
+				//margin-bottom: 12px;
+			}
+
+			.filter-buttons
+			{
+				padding: 6px 0;
+			}
+		}
+	}
+
+	.count
+	{
+		@include -w-prefix(-transition, -transform ease-in-out 300ms);
+		@include -w-prefix(-flex, 0 0 auto);
+		text-align: center;
+		width: 1.5em;
+		height: 1.5em;
+		margin: 0 6px 0 4px;
+		line-height: 1.5em;
+		background-color: white;
+		color: $dc_darkgray;
+		border-radius: 100%;
+		box-shadow: $dc_boxshadow;
+	}
+
+	.filter-item
+	{
+		@include -w-prefix(display, -flex);
+		@include -w-prefix(-align-items, center);
+		height: 36px;
+		padding: 0 12px;
+		margin: 12px 0;
+
+		&.activated
+		{
+			background-color: rgba(0,0,0,0.1);
+		}
+
+		.filter-item-label
+		{
+			@include -w-prefix(-flex, 0 0 auto);
+			margin-right: 6px;
+			font-size: $dc_big;
+		}
+
+		.filter-item-content
+		{
+			@include -w-prefix(display, -flex);
+			@include -w-prefix(-flex, 1);
+			@include -w-prefix(-justify-content, flex-end);
+			@include -w-prefix(-align-items, center);
+			text-align: right;
+			font-size: $dc_big;
+
+			.fa.fa-chevron-right
+			{
+				margin-left: 12px;
+			}
+		}
+	}
+
+	.discipline-page
+	{
+		@include -w-prefix(display, -flex);
+		@include -w-prefix(-flex-direction, column);
+
+		.filter-header, .filter-buttons
+		{
+			@include -w-prefix(-flex, 0 0 auto);
+			position: relative;
+			margin: 0 !important;
+		}
+
+		.filter-header
+		{
+			&:after
+			{
+				@include -w-prefix(background, "-linear-gradient(rgba(255,255,255,1), rgba(255,255,255,0))");
+				bottom: -28px;
+			}
+		}
+
+		.filter-header:after, .filter-buttons:before
+		{
+			content: " ";
+			position: absolute;
+			left: 0;
+			right: 0;
+			width: 100%;
+			height: 24px;
+			z-index: 100;
+		}
+
+		ion-scroll
+		{
+			max-height: 100%;
+			margin: 6px 0;
+
+			&:after
+			{
+				bottom: -12px;
+			}
+		}
+
+		.filter-buttons
+		{
+			padding-top: 4px;
+
+			&:before
+			{
+				@include -w-prefix(background, "-linear-gradient(rgba(255,255,255,0), rgba(255,255,255,1))");
+				top: -28px;
+			}
+		}
+	}
+
+	.filter-discipline-item
+	{
+		padding: 10px 12px;
+
+		&.activated
+		{
+			background-color: rgba(0,0,0,0.1);
+		}
+
+		&:first-child
+		{
+			margin-top: 6px;
+		}
+
+		&:last-child
+		{
+			margin-bottom: 12px;
+		}
+
+		.filter-discipline-item:last-child
+		{
+			margin-bottom: 0;
+		}
+
+		.count
+		{
+			margin-left: 12px;
+		}
+
+		&.selected
+		{
+			font-family: Roboto-Bold;
+
+			.child:not(.selected)
+			{
+				font-family: Roboto;
+			}
+
+			& > span > .count,
+      & > .filter-discipline-item-label > .filter-discipline-item-details > .count
+			{
+				background-color: $dc_red;
+				color: white;
+			}
+		}
+
+		.filter-discipline-item-label
+		{
+			@include -w-prefix(display, -flex);
+		}
+
+		.filter-discipline-item-details
+		{
+			@include -w-prefix(display, -flex);
+			@include -w-prefix(-flex, 1);
+			@include -w-prefix(-align-items, center);
+
+			.name
+			{
+				@include -w-prefix(-flex, 1);
+				font-size: $dc_big;
+			}
+		}
+
+		.filter-discipline-item-label
+		{
+			.action:after
+			{
+				@include -w-prefix(-flex, 0 0 2em);
+				@include -w-prefix(display, -flex);
+				@include -w-prefix(-align-items, center);
+				@include -w-prefix(-justify-content, center);
+				width: 1em;
+				height: 1em;
+				margin-right: 12px;
+				font-family: "dc_icons";
+				content: "\f114";
+			}
+		}
+
+		&.selected .filter-discipline-item-label .action:after,
+		&.child.selected .filter-discipline-item-label .action:after
+		{
+			content: "\f115";
+		}
+
+		&.parent
+		{
+			.filter-discipline-item-label
+			{
+				.action:after
+				{
+					@include -w-prefix(-transition, -transform ease-in-out 300ms);
+					@include -w-prefix(-transform, rotate3d(0, 0, 1, 0));
+					content: "\f006";
+				}
+			}
+
+			&.expanded
+			{
+				padding-bottom: 0;
+
+				.filter-discipline-item-label
+				{
+					.action:after
+					{
+						@include -w-prefix(-transform, rotate3d(0, 0, 1, 90deg));
+					}
+				}
+
+				.count
+				{
+					@include -w-prefix(-transform, scale(0));
+				}
+
+				.child
+				{
+
+					.action:after {
+						@include -w-prefix(-transform, rotate3d(0, 0, 1, 0));
+					}
+
+					.count
+					{
+						@include -w-prefix(-transform, scale(1));
+					}
+				}
+			}
+		}
+
+		&.child
+		{
+			//@include ng-if-scale-in-animation();
+			//transform-origin: 50% 0;
+			padding-left: 12px;
+
+			.filter-discipline-item-label
+			{
+				.action:after
+				{
+					content: "\f114";
+				}
+			}
+		}
+	}
+
+	.filter-buttons
+	{
+		width: 100%;
+		text-align: right;
+
+		button
+		{
+			@include removeApperance();
+			font-size: $dc_bigger;
+
+			&.activated
+			{
+				font-family: Roboto-Bold;
+			}
+
+		}
+	}
+
+	.status
+	{
+		@include -w-prefix(display, -flex);
+		@include -w-prefix(-align-items, center);
+
+		select
+		{
+			@include -w-prefix(-flex, 1);
+			@include removeApperance();
+			font-size: 1em;
+		}
+
+		&:after
+		{
+			@include -w-prefix(-flex, 0 0 auto);
+			font-family: dc_icons!important;
+			content: "\f012";
+			margin-left: 6px;
+		}
+	}
+
+	.rating
+	{
+		.clear
+		{
+			color: $dc_gray;
+			padding: 6px 6px 6px 0;
+		}
+
+		dc-rating
+		{
+			max-width: 140px;
+			font-size: 22px;
+		}
+	}
+
+}

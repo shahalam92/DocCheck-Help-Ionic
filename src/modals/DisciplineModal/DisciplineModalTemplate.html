@@ -1,0 +1,125 @@
+<ion-modal-view 
+	class="discipline-modal" 
+	ng-class="
+	::{
+		'no-boxes' : vm.noCheckboxes,
+		'no-header': vm.noHeader
+	}"
+	>    
+
+	<ion-header-bar 
+		align-title="center" 
+		class="bar-doccheck"
+		>
+
+	  <div 
+	  	class="buttons"
+	  	>
+	  </div>
+
+	  <h1 
+	  	class="title"
+	  	translate="EXPERTFILTER.TITLE"
+	  	>	  	
+	  </h1>
+
+	  <div 
+	  	class="buttons"
+	  	>
+
+	    <button 
+	    	class="fa fa-close dc-header-button"
+	    	ng-click="vm.closeModal()"
+	    	>	    	
+	    </button>
+
+	  </div>
+
+	</ion-header-bar>
+
+  <ion-content scroll="false">
+
+    <ion-item  
+    	class="all-disciplines"
+    	ng-class="
+    	{
+				'fa fa-box-empty'  : vm.inputModel.length > 0,
+				'fa fa-box-checked': vm.inputModel.length == 0,
+				'selected'				 : !vm.selectedDiscipline
+    	}"
+			ng-click="vm.clear($event)" 
+			translate="EXPERTFILTER.NOFILTER"
+			>
+		</ion-item>
+
+    <ion-scroll>
+			
+			<ion-list>
+
+				<ion-item
+					class="discipline-item"
+				  ng-class="
+				  {
+						'expandable': discipline.subdisciplines,
+						'expanded'  : true || discipline.expanded,
+						'selected'	: vm.selectedDiscipline.name == discipline.name || vm.selectedDiscipline.parent == discipline.name
+					}"
+					ng-click="vm.select($event, discipline)"
+				 	ng-repeat="(key, discipline) in vm.disciplineObject track by discipline.name"
+				 	>
+
+					<div 
+						class="discipline-name"
+						>
+						{{::discipline.name}}<span 
+							class="expert-count" 
+							ng-if="::discipline.expertCount"
+							> ({{::discipline.expertCount}})
+						</span>
+
+					</div>
+
+					<div 
+						class="icon fa fa-chevron-right"
+						>
+					</div>
+
+					<ion-list
+						class="subdisciplines"
+						ng-if="true || discipline.expanded"
+						>
+
+						<ion-item
+							class="discipline-item"
+							ng-click="vm.select($event, subdiscipline)"
+							ng-repeat="(key, subdiscipline) in discipline.subdisciplines track by subdiscipline.id"
+							ng-class="{
+								'selected' : vm.selectedDiscipline.parent == discipline.name && vm.selectedDiscipline.name == subdiscipline.name
+							}"
+							>
+
+							<div 
+								class="discipline-name"
+								>
+								{{::subdiscipline.name}}
+								<span 
+									class="expert-count" 
+									ng-if="::subdiscipline.expertCount"
+									> ({{::subdiscipline.expertCount}})
+								</span>
+
+							</div>
+
+						</ion-item>
+
+					</ion-list>
+
+				</ion-item>
+
+			</ion-list>
+
+    </ion-scroll>
+
+  </ion-content>
+  
+</ion-modal-view>

@@ -1,0 +1,193 @@
+
+
+/* Rating style */
+
+.rating-view
+{
+	ion-content
+	{
+		@include -w-prefix(display, -flex);
+		@include -w-prefix(-flex-direction, column);
+
+		padding: 12px 24px 4px;
+	}
+
+	.rating-content
+	{
+		@include -w-prefix(-flex, 1);
+		@include -w-prefix(display, -flex);
+		@include -w-prefix(-flex-direction, column);
+
+		height: 100%;
+
+		overflow: scroll;
+		-webkit-overflow-scrolling: touch;
+	}
+
+	expert-headline
+	{
+		@include -w-prefix(-flex, 0 0 auto);
+		margin: 0 0 24px;
+		padding: 16px 0 0;
+	}
+
+	.rating
+	{
+		@include -w-prefix(-flex, 0 0 auto);
+		text-align: center;
+
+		font-family: Roboto-Bold;
+		font-size: 1.1em;
+		line-height: 1.5em;
+
+		dc-rating
+		{
+			width: 264px;
+			margin: 0 auto;
+			font-size: 40px
+		}
+	}
+
+	.comment
+	{
+		@include -w-prefix(-flex, 1);
+
+		width: 100%;
+		padding: 8px;
+    margin: 24px 0 0;
+    resize: none;
+    font-family: Roboto-Bold;
+    color: $dc_darkgray;
+    font-size: 1.1em;
+
+    .no-comment
+    {
+    	font-size: 0.8em;
+    	font-style: italic;
+    }
+	}
+
+	textarea.comment
+	{
+		border: 2px solid $dc_lightergray;
+	}
+
+	div.comment
+	{
+		overflow: scroll;
+		-webkit-overflow-scrolling: touch;
+	}
+
+	.buttons
+	{
+		@include -w-prefix(-flex, 0 0 auto);
+		padding: 12px 0 0;
+
+		button
+		{
+			margin-top: 12px;
+			
+			&.rating-done
+			{
+				margin-bottom: 12px;
+
+				&.disabled
+				{
+					//color: $dc_darkgray;
+					//background-color: $dc_lightergray;
+				}
+			}
+		}
+	}
+
+	@media screen and (orientation: landscape)
+	{
+		.rating-headline
+		{
+			display: none
+		}
+
+		.rating-content, .buttons
+		{
+			@include -w-prefix(display, -flex);
+			//@include -w-prefix(-flex-direction, row);
+			@include -w-prefix(-align-items, center);
+
+			.comment
+			{
+				margin: 12px 0;
+			}
+		}
+
+		.buttons
+		{
+			button, favorite-button
+			{
+				flex: 1;
+			}
+		}
+
+
+
+		/*
+
+		.rating-content
+		{
+			padding: 12px;
+		}
+
+		.comment
+		{
+			margin: 12px 12px 0;
+		}
+
+		.buttons 
+		{
+			padding: 0 12px 12px;
+
+			.add-favorite
+			{
+				display: none;
+			}
+		}
+
+		.rating-headline .add-favorite
+		{
+			@include -w-prefix(display, -flex);
+			margin: 0 auto;
+			line-height: 36px;
+		}
+		*/
+	}
+	
+}
+
+.keyboard-open 
+{
+	.rating-view ion-content
+	{
+		@include -w-prefix(-flex-direction, column);
+
+		.rating-headline
+		{
+			//height: 44px;
+
+			expert-headline, img
+			{
+				//height: 100%;
+				//width: auto;
+				margin: 0;
+			}
+		}
+
+		.rating
+		{
+			display: none;
+		}
+
+		.rating-content
+		{
+			padding: 0;
+		}
+	}
+}

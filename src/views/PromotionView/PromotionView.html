@@ -1,0 +1,29 @@
+<!-- Promotion view template -->
+
+<ion-view 
+	class="promotion-view"
+	view-title="{{::('SETTINGS.PROMOTION' | translate)}}"
+	>
+
+	<ion-nav-bar align-title="center" class="bar-doccheck">
+
+    <ion-nav-back-button>
+    </ion-nav-back-button>
+    
+    <ion-nav-buttons side="right">
+    </ion-nav-buttons>
+
+  </ion-nav-bar>
+
+	<ion-content>	
+
+		<iframe 
+			src="{{link}}"
+			style="width:100%; height:100%"
+			id="iframe"
+			onload="window.iframeLoad()">
+		</iframe>
+		
+	</ion-content>
+
+</ion-view>

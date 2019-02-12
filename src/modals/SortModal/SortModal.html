@@ -1,0 +1,29 @@
+<ion-modal-view
+	class="sort-modal"
+	ng-controller="SortModalCtrl as sort"
+	ng-click="sort.hideModal()"
+	>
+
+	<div
+		class="sort-modal-content"		
+		>
+
+		<button
+			class="sort-item {{ ::item.icon }}"
+			ng-repeat="item in sort.items"
+			ng-click="sort.set( $event, $index )"
+			ng-class="{
+				active : $index == sort.current
+			}"
+			>
+
+			<span
+				translate="SORTMODAL.{{ ::item.label }}"
+				>
+			</span>
+
+		</button>
+
+	</div>
+
+</ion-modal-view>

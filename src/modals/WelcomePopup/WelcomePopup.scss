@@ -1,0 +1,29 @@
+.welcome-popup.dc-popup
+{
+	.popup-body
+	{
+		input
+		{
+			margin-top: 6px;
+			text-align: center;
+			text-transform: uppercase;
+		}
+
+		input::-webkit-input-placeholder
+		{
+			text-transform: initial;	
+		}
+
+		.popup-buttons
+		{
+			@include -w-prefix(-flex-direction, column);
+			margin-top: 24px;
+			height: initial;
+
+			button:not(:last-child)
+			{
+				margin-bottom: 12px;
+			}
+		}
+	}
+}

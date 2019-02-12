@@ -1,0 +1,127 @@
+<!-- Consultations view template -->
+
+<ion-view
+	class="consultations-view"
+	view-title="{{::('CONSULTATIONS.TITLE' | translate)}}"
+	>
+
+	<ion-nav-bar
+		align-title="center"
+		class="bar-doccheck"
+		>
+
+    <ion-nav-buttons
+    	side="left"
+    	>
+    </ion-nav-buttons>
+
+    <ion-nav-buttons
+    	side="right"
+    	>
+			<button
+				class="dc-header-button fa fa-warning scale-in-if"
+				ng-if="consultations.disconnected"
+				ng-click="consultations.showConnectivityPopover($event)"
+	    	>
+	    </button>
+    </ion-nav-buttons>
+
+  </ion-nav-bar>
+
+	<ion-content
+		prevent-scroll-click
+		>
+
+		<!-- Loading -->
+		<dc-loading-spinner
+			ng-if="consultation.isLoading()"
+			class="center"
+			text="{{::('CONSULTATIONS.LOADING' | translate)}}"
+			>
+		</dc-loading-spinner>
+
+		<!-- No consultations to show -->
+		<div
+			class="no-cons animate-if quick"
+			ng-if="consultations.isListingEmpty()"
+			>
+
+			<div
+				class="no-cons-wrapper"
+				>
+				<span
+					translate-once="CONSULTATIONS.NOCONS"
+					>
+				</span>
+				<button
+					class="dc-button-block dc-button-lightgreen"
+					translate-once="CONSULTATIONS.GO"
+					ng-click="consultations.openExpertListing()"
+					>
+				</button>
+			</div>
+
+		</div>
+
+		<!-- Not authenticated -->
+		<div
+			class="no-auth animate-if quick"
+			ng-if="consultations.authenticated == false"
+			>
+			<div
+				class="no-auth-wrapper"
+				>
+				<span
+					translate-once="CONSULTATIONS.NOAUTH"
+					>
+				</span>
+				<button
+					class="dc-button-block dc-button-lightgreen"
+					translate-once="CONSULTATIONS.LOGIN"
+					ng-click="consultations.openLogin()"
+					>
+				</button>
+			</div>
+		</div>
+
+		<!-- Error occured -->
+		<div
+			ng-if="consultations.authenticated && !(consultations.listing.current.length > 0) && consultations.listing.error.pending"
+			class="load-error"
+			translate="CONSULTATIONS.ERROR"
+			translate-compile
+			>
+		</div>
+
+		<!-- Consultations available -->
+		<div
+			class="listing-wrapper"
+			ng-class="{
+				shown : consultations.listing.current.length > 0
+			}"
+			>
+			<consultation-listing-item
+				ng-repeat="
+					consultation in consultations.listing.current
+					| orderBy:'orderCriterium':true
+					|	limitTo: consultations.infinite.max
+						track by consultation.id
+				"
+				ng-click="consultations.openDetails(consultation)"
+				consultation="consultation"
+				>
+			</consultation-listing-item>
+		</div>
+
+		<ion-infinite-scroll
+			ng-if="consultations.infinite.max < consultations.listing.current.length"
+			on-infinite="consultations.infiniteScroll()"
+			spinner="spiral"
+			distance="10%"
+			>
+
+		</ion-infinite-scroll>
+
+	</ion-content>
+
+</ion-view>

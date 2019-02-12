@@ -1,0 +1,126 @@
+
+
+/* Settings style */
+
+.settings-view
+{
+	.seperator
+	{
+	  background-color: $dc_lightergray;
+	  font-family: Roboto-Black;
+	  padding: 10px 12px;
+	  font-size: 1.1em;
+	}	
+
+	.activate-email
+	{
+		@include -w-prefix(display, -flex);
+		background-color: $dc_lightgreen;
+		color: white;
+		padding: 8px 0 8px 12px;
+		font-size: 1.1em;
+		border-bottom: 2px solid white;
+
+		.text, .info
+		{
+			@include -w-prefix(-align-self, center);
+		}
+
+		.text
+		{
+			@include -w-prefix(-flex, 1);
+		}
+
+		.info
+		{
+			padding: 6px 12px;
+			font-size: $dc_head;
+		}
+	}
+
+	.login
+	{
+		font-family: Roboto-Bold;
+		background-color: $dc_lightgreen;
+		color: white;
+
+		:before
+		{
+			color: white;
+		}
+
+		.in
+		{
+			display: inline;
+		}
+
+		.out
+		{
+			display: none;
+		}
+
+		&.authenticated
+		{
+			font-family: Roboto;
+			background-color: $dc_lightergray;
+			color: black;
+			border-top: 2px solid white;
+			padding: 8px 12px;
+
+			&>div
+			{
+				font-size: 1em;
+			}
+
+			:before
+			{
+				color: $dc_darkgray;
+			}
+
+			.in
+			{
+				display: none;
+			}
+
+			.out
+			{
+				display: inline;
+			}
+		}
+	}
+}
+
+.settings-email-activation-popup
+{
+	.token-input
+	{
+		text-align: center;
+		margin: 12px 0 0;
+	}
+
+	.resend-activation-mail
+	{
+		text-align: center;
+		color: $dc_darkgray;
+		padding: 6px 0;
+	}
+
+	.request-new-token
+	{
+		&:before
+		{
+			margin-right: 8px;
+			display: inline-block;
+		}
+
+		width: 100%;
+		text-align: center;
+    color: $dc_darkgray;
+    line-height: 36px;
+	}
+
+	.error
+	{
+		margin-top: 12px;
+	}
+}

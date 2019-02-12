@@ -1,0 +1,285 @@
+<ion-modal-view
+	class="filter-modal"
+	ng-controller="FilterModalCtrl as filter"
+	>
+
+	<div
+		class="filter-modal-content-wrapper"
+		ng-switch="filter.page"
+		ng-click="filter.hideFilterModal()"
+		>
+
+		<div
+			class="filter-modal-content"
+			ng-click="
+				$event.preventDefault(); 
+				$event.stopPropagation();
+			"
+			ng-switch-when="0"
+			>
+			<div 
+				class="filter-header"
+				translate="FILTERMODAL.TITLE"
+				>
+			</div>
+
+			<ion-scroll>
+
+				<div
+					class="filter-item"
+					ng-click="
+						$event.preventDefault(); 
+						$event.stopPropagation(); 
+						filter.openPage(1)
+					"
+					>
+
+					<div
+						class="filter-item-label"
+						translate="FILTERMODAL.SECTION.DISCIPLINES"
+						>
+					</div>
+					<div
+						class="filter-item-content discipline"
+						>
+						<span
+							ng-bind-html="filter.disciplineInfoText"
+							>
+						</span>
+						<div
+							class="fa fa-chevron-right"
+							>
+						</div>
+
+					</div>
+					
+				</div>
+
+				<div
+					class="filter-item"
+					>
+
+					<div
+						class="filter-item-label"
+						translate="FILTERMODAL.SECTION.RATING"
+						>
+					</div>
+					<div
+						class="filter-item-content rating"
+						>
+						<div
+							class="fa fa-sign-close clear"
+							ng-if="filter.minRating > 0"
+							ng-click="
+								$event.preventDefault(); 
+								$event.stopPropagation(); 
+								filter.minRating = 0
+							"
+							>
+						</div>
+						<dc-rating
+							editable="true"
+							model="filter.minRating"
+							>
+						</dc-rating>
+					</div>
+					
+				</div>
+				
+				<!--
+					Excluded due to DCX-1096
+					-> too complicated
+
+				<div
+					class="filter-item"
+					>
+
+					<div
+						class="filter-item-label"
+						translate="FILTERMODAL.SECTION.STATUS"
+						>
+					</div>
+					<div
+						class="filter-item-content status"
+						>
+						<select
+							dir="rtl"
+							ng-model="filter.status"
+							>
+							<option
+								translate="FILTERMODAL.STATUS.0"
+								value=""
+								>									
+							</option>
+							<option
+								translate="FILTERMODAL.STATUS.1"
+								value="1"
+								>									
+							</option>
+						</select>
+					</div>
+
+				</div>
+				-->
+
+			</ion-scroll>
+
+			<div
+				class="filter-buttons"
+				>	
+
+				<button
+					class="filter-button"
+					ng-click="
+						$event.preventDefault(); 
+						$event.stopPropagation(); 
+						filter.discardFilters()
+					"
+					translate="FILTERMODAL.DISCARD"
+					>
+				</button>
+
+				<button
+					class="filter-button"
+					ng-click="
+						$event.preventDefault(); 
+						$event.stopPropagation(); 
+						filter.saveFilters()
+					"
+					translate="FILTERMODAL.DONE"
+					>
+				</button>
+
+			</div>
+
+		</div>
+
+		<div
+			class="filter-modal-content discipline-page"
+			ng-switch-when="1"
+			>
+
+			<div 
+				class="filter-header"
+				translate="FILTERMODAL.SECTION.DISCIPLINES"
+				ng-click="
+					$event.preventDefault(); 
+					$event.stopPropagation(); 
+				"
+				>
+			</div>
+
+			<ion-scroll>
+
+				<div
+					class="filter-discipline-item"
+					ng-repeat="(key, disc) in filter.disciplines"
+					ng-class="{
+						parent: disc.subdisciplines,
+						expanded: disc.expanded,
+						selected: disc.selected
+					}"
+					ng-click="
+						$event.preventDefault(); 
+						$event.stopPropagation(); 
+						filter.toggleDiscipline( $event, disc )
+					"
+					>
+					<div 
+						class="filter-discipline-item-label"
+						>
+
+						<span
+							class="filter-discipline-item-details"
+							>
+							<span
+								class="action"
+								>
+							</span>
+							<span
+								class="name"
+								>
+								{{key}}
+							</span>
+							<span
+								class="count"
+								>
+								{{disc.expertCount}}
+							</span>
+						</span>
+
+					</div>
+
+					<div
+						class="filter-discipline-item child"
+						ng-repeat="(ckey, cdisc) in disc.subdisciplines"
+						ng-if="disc.expanded"
+						ng-click="
+							$event.preventDefault(); 
+							$event.stopPropagation(); 
+							filter.toggleDiscipline( $event, cdisc, disc )
+						"
+						ng-class="{
+							selected: cdisc.selected
+						}"
+						>
+						<span
+							class="filter-discipline-item-details filter-discipline-item-label"
+							>
+							<span
+								class="action"
+								>
+							</span>
+							<span
+								class="name"
+								>
+								{{ckey}}
+							</span>
+							<span
+								class="count"
+								>
+								{{cdisc.expertCount}}
+							</span>
+						</span>
+					</div>
+				</div>
+
+			</ion-scroll>
+
+			<div
+				class="filter-buttons"
+				ng-click="
+					$event.preventDefault(); 
+					$event.stopPropagation(); 
+				"
+				>	
+
+				<button
+					class="filter-button"
+					ng-click="
+						$event.preventDefault(); 
+						$event.stopPropagation(); 
+						filter.discardDisciplines()
+					"
+					translate="FILTERMODAL.DISCARD"
+					>
+				</button>
+
+				<button
+					class="filter-button"
+					ng-click="
+						$event.preventDefault(); 
+						$event.stopPropagation(); 
+						filter.saveDisciplines()
+					"
+					translate="FILTERMODAL.APPLY"
+					>
+				</button>
+
+			</div>
+
+		</div>
+
+	</div>
+
+</ion-modal-view>

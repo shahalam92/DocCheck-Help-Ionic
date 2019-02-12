@@ -1,0 +1,468 @@
+@keyframes arrowScaleAnimation {
+	0% {
+		transform: scaleX(0);
+	}
+	50% {
+		transform: scaleX(1);
+	}
+	100% {
+		transform: scaleX(1);
+	}
+}
+
+@-webkit-keyframes arrowScaleAnimation {
+	0% {
+		-webkit-transform: scale(0);
+	}
+	50% {
+		transform: scaleX(1);
+	}
+	100% {
+		transform: scaleX(1);
+	}
+}
+
+@keyframes ringAnimation {
+	10%, 14%, 18%, 22%, 30%, 38% {
+		transform: translate(-2px, 0);
+	}
+	12%, 16%, 20%, 26%, 34% {
+		transform: translate(2px, 0);
+	}
+	0% {
+		color: black;
+	}
+	35% {
+		color: $dc_lightgreen;
+	}
+	50% {
+		transform: translate(0);
+	}
+	100% {
+		color: black;
+	}
+	100% {
+		transform: translate(0);
+	}
+}
+
+@-webkit-keyframes ringAnimation {
+	10%, 14%, 18%, 22%, 30%, 38% {
+		-webkit-transform: translate(-2px, 0);
+	}
+	12%, 16%, 20%, 26%, 34% {
+		-webkit-transform: translate(2px, 0);
+	}
+	0% {
+		color: black;
+	}
+	35% {
+		color: $dc_lightgreen;
+	}
+	50% {
+		-webkit-transform: translate(0);
+	}
+	100% {
+		color: black;
+	}
+	100% {
+		-webkit-transform: translate(0);
+	}
+}
+
+@keyframes hangUpAnimation {
+	0% {
+		transform: rotateZ(0deg);
+		color: black;
+		box-shadow: 0 0 12px rgba(0,0,0,0.14);
+	}
+	25% {
+		transform: rotateZ(135deg);
+		color: $dc_darkred;
+	}
+	65% {
+		color: $dc_darkred;
+	}
+	80% {
+		transform: rotateZ(135deg);
+		color: transparent;
+	}
+	90% {
+		transform: rotateZ(0);
+		color: transparent;
+	}
+	90% {
+		color: transparent;	
+	}
+	100% {
+		transform: rotateZ(0);
+		color: black;
+		box-shadow: 0 0 12px rgba(0,0,0,0.14);
+	}
+}
+
+@-webkit-keyframes hangUpAnimation {
+	0% {
+		-webkit-transform: rotateZ(0deg);
+		color: black;
+		box-shadow: 0 0 12px rgba(0,0,0,0.14);
+	}
+	25% {
+		-webkit-transform: rotateZ(135deg);
+		color: $dc_darkred;
+	}
+	65% {
+		color: $dc_darkred;
+	}
+	80% {
+		-webkit-transform: rotateZ(135deg);
+		color: transparent;
+	}
+	90% {
+		-webkit-transform: rotateZ(0);
+		color: transparent;
+	}
+	90% {
+		color: transparent;	
+	}
+	100% {
+		-webkit-transform: rotateZ(0);
+		color: black;
+		box-shadow: 0 0 12px rgba(0,0,0,0.14);
+	}
+}
+
+.call-intro-modal
+{
+	&.slide-in-left {
+	    -webkit-transform: translate3d(100%,0,0);
+	    transform: translate3d(100%,0,0);
+	}
+
+	&.slide-in-left.ng-enter,
+	&.slide-in-left>.ng-enter 
+	{
+	    -webkit-transition: all cubic-bezier(.1,.7,.1,1) 400ms;
+	    transition: all cubic-bezier(.1,.7,.1,1) 400ms
+	}
+
+	&.slide-in-left.ng-enter-active,&.slide-in-left>.ng-enter-active {
+	    -webkit-transform: translate3d(0,0,0);
+	    transform: translate3d(0,0,0)
+	}
+
+	&.slide-in-left.ng-leave,&.slide-in-left>.ng-leave {
+	    -webkit-transition: all ease-in-out 250ms;
+	    transition: all ease-in-out 250ms
+	}
+
+	@include -w-prefix(display, -flex);
+	@include -w-prefix(-align-items, center);
+	@include -w-prefix(-justify-content, center);
+
+	background-color: transparent;
+	height: 100%;
+
+	.modal-wrapper
+	{
+		position: relative;
+		width: 100%;
+		height: 360px;
+
+		margin: 0 12px;
+		max-width: 320px;
+		max-height: 90%;
+		min-height: 280px;
+		background-color: $dc_lightergray;
+
+		box-shadow: $dc_boxshadow_highlight;
+
+		//font-size: $dc_big;
+
+		ion-content
+		{
+			.slider
+			{
+				height: 100%;					
+
+				.slider-pager
+				{
+					counter-reset: pager-counter;
+					height: 36px;
+					bottom: 0;
+					padding: 6px 0;
+					background-color: $dc_lightergray;
+					box-shadow: 0 0 6px rgba(0,0,0,0.3);
+
+					.slider-pager-page
+					{
+						position: relative;
+						width: 24px;
+						opacity: .1;
+						@include -w-prefix(-transform, scale(.8));
+
+						&.active
+						{
+							@include -w-prefix(-transform, scale(1));
+							opacity: 1;
+						}
+
+						&:before
+						{
+							content: counter(pager-counter);
+							counter-increment: pager-counter;
+
+							position: absolute;
+							display: block;
+							font-family: Roboto-Bold;
+							line-height: 24px;
+							width: 100%;
+							text-align: center;
+							color: white;
+						}
+
+						i:before
+						{
+							font-size: 24px;
+						}
+					}
+				}
+
+				ion-slide
+				{
+					@include -w-prefix(display, -flex);
+					@include -w-prefix(-flex-direction, column);
+
+					background-color: white;
+				}
+
+				.title
+				{
+					@include -w-prefix(display, -flex);
+					@include -w-prefix(-justify-content, center);
+					@include -w-prefix(-align-items, center);
+					@include -w-prefix(-flex, 0 0 48px);
+					text-align: center;
+					padding: 0 36px;
+					font-family: Roboto-Bold;
+					font-size: $dc_bigger;
+					background-color: $dc_lightergray;
+					z-index: 10;
+				}
+
+				.call-graphic
+				{
+					@include -w-prefix(-flex, 1);
+					@include -w-prefix(display, -flex);
+					@include -w-prefix(-align-items, center);
+					height: 100%;
+					background-color: $dc_lightergray;
+					padding: 0 12px;
+					box-shadow: 0 4px 2px -2px rgba(0,0,0,0.3);
+
+					.call-icon
+					{
+						@include -w-prefix(display, -flex);
+						@include -w-prefix(-flex-direction, column);
+						@include -w-prefix(-justify-content, center);
+						@include -w-prefix(-align-items, center);
+						@include -w-prefix(-flex, 1);
+						text-align: center;
+
+						&:before
+						{
+							display: inline-block;
+							background-color: white;
+							width: 48px;
+							height: 48px;
+							font-size: 24px;
+							padding: 12px;
+							border-radius: 100%;
+							box-shadow: $dc_boxshadow;
+							margin-bottom: 6px;
+						}
+
+						&.active:before
+						{
+							color: $dc_lightgreen;
+						}
+
+						&.inactive
+						{
+							//@include -w-prefix(-transform, scale(.8));
+							opacity: 0.5;
+
+							&:before
+							{
+								box-shadow: $dc_boxshadow;
+							}
+						}
+
+						&.ringing
+						{
+							&:before
+							{
+								@include -w-prefix(-animation, ringAnimation 2s infinite);
+							}
+						}
+
+						&.hang-up
+						{
+							&:before
+							{
+								@include -w-prefix(-animation, hangUpAnimation 3s infinite);
+							}	
+						}
+
+						&.data
+						{
+							@include -w-prefix(-flex, 2);
+							@include -w-prefix(-align-items, flex-start);
+
+							div
+							{
+								padding: 6px;
+								margin: 6px 0;
+								border-radius: 4px;
+								background-color: white;
+
+							}
+
+							div:before
+							{
+								display: inline-block;
+								text-align: right;
+								margin-right: 12px;
+							}
+						}
+					}
+				}
+
+				.call-arrow
+				{
+					@include -w-prefix(-flex, 1);
+					height: 72px;
+					text-align: center;
+					padding: 0 0 24px;
+
+					&.active:before
+					{
+						opacity: 1;
+					}
+
+					&:before
+					{
+						font-size: 40px;
+						display: block;
+						opacity: 0.5;
+						margin: 0 auto;
+					}
+
+					&.left:before
+					{
+						transform-origin: 100% 0;	
+					}
+
+					&.right:before
+					{
+						transform-origin: 0 0;
+					}
+
+					&.failed:before
+					{
+						color: $dc_darkred;
+					}
+
+					&.animated:before {
+						@include -w-prefix(-animation, arrowScaleAnimation 2s infinite);
+						opacity: 1;
+					}					
+				}
+					
+				.intro-text
+				{
+					@include -w-prefix(display, -flex);
+					@include -w-prefix(-flex-direction, column);
+					@include -w-prefix(-justify-content, center);
+					@include -w-prefix(-align-items, center);
+					@include -w-prefix(-flex, 1);
+					min-height: 100px;
+					z-index: 10;
+					margin: 6px 6px 40px;
+					padding: 6px 12px;
+				}
+			}
+		}
+	}
+
+	.last, .next, .close
+	{
+		@include -w-prefix(-transition, all ease-in-out 300ms);
+
+		position: absolute;
+		z-index: 20;
+		height: 36px;
+		color: black;
+		width: 48px;
+		bottom: 0;
+		font-weight: 700;
+
+		&:before
+		{
+			font-size: 16px;
+			line-height: 36px;
+		}
+
+		&.activated
+		{
+			background-color: rgba(0,0,0,0.12);
+		}
+
+		&.hidden
+		{
+			opacity: 0;
+		}
+	}
+
+	.next {
+		right: 0;
+	}
+
+	.last
+	{
+		left: 0;
+	}
+	
+	/*
+	button.dc-icon-button
+	{
+		&.next
+		{
+			background-color: $dc_lightgreen;
+			border-radius: 80% 0 0 0;
+			right: 0;
+			text-align: right;
+			padding: 4px 10px 0 0;
+			color: white;
+		}
+
+		&.last
+		{
+			background-color: $dc_gray;
+			border-radius: 0 80% 0 0;
+			right: 0;
+			text-align: left;
+			padding: 4px 0 0 10px;
+			color: white;
+		}
+	}
+	*/
+
+	.dc-icon-button.close
+	{
+		top: 6px;
+		right: 6px;
+		border-radius: 100%;
+	}
+
+}
