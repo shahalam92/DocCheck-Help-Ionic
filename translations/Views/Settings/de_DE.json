@@ -1,0 +1,76 @@
+{
+  "SETTINGS": {
+    "TITLE": "Einstellungen",
+    "SIGN_OUT": "Ausloggen",
+    "SIGN_IN": "Jetzt loslegen!",
+    "CHANGE_EMAIL": "eMail-Adresse ändern",
+    "PAYMENT_HISTORY": "Verlauf",
+    "PROFILE": "Profil",
+    "BALANCE": "Guthabenkonto",
+    "NOTIFICATIONS": "Benachrichtungen",
+    "FEEDBACK": "Problem melden",
+    "SEPERATOR_INFORMATION": "Informationen",
+    "GUIDED_TOUR": "Guided Tour",
+    "HINTS": "Hilfe & Tipps",
+    "TERMS": "AGB",
+    "CONTACT": "Kontakt",
+    "PRIVACY": "Datenschutz",
+    "IMPRESS": "Impressum",
+    "PROMOTION": "Weitere Apps von DocCheck",
+    "NEWSFEED": "Neuigkeiten",
+    "NEWSFEED_LOADING": "Neuigkeiten werden abgerufen",
+    "NEWSFEED_NONE": "Keine Benachrichtungen verfügbar",
+    "NEWSFEED_RECEIVED": "erhalten ",
+    "NEWSFEED_ITEM_DELETED": "Neuigkeit gelöscht",
+    "SEND_LOG": "Logfile senden",
+    "LOGFILE_SENT": {
+      "SUCCESS": "Logfile wurde gesendet.",
+      "FAIL": "Logfile konnte nicht gesendet werden.",
+      "PROGRESS": "Fortschritt: {{progress}}%"
+    },
+    "RATE": "App jetzt bewerten",
+    "SIGNED_IN_AS": "Eingeloggt als {{email}}",
+    "SIGNING_OUT": "Du wirst abgemeldet...",
+    "ACTIVATE_EMAIL":
+      "Du hast Deine eMail noch nicht aktiviert! <br /><span class='dc-bold'>Jetzt in einer kurzen Minute aktivieren!</span>",
+    "EMAIL_ACTIVATION_POPOVER": {
+      "TEXT":
+        "<span class='dc-bold'>Warum sollte ich meine eMail aktivieren?</span> <br /><br />Über Deine eMail-Adresse identifizieren wir Deinen Account. Erst wenn Du sie aktiviert hast, können wir Dir optimal im Falle einer Frage oder eines Problems weiterhelfen."
+    },
+    "EMAIL_ACTIVATION_POPUP": {
+      "TITLE": "eMail aktivieren",
+      "TOKEN_HINT":
+        "Gib hier den Code ein, den Du nach Deiner Registrierung per eMail bekommen hast.",
+      "TOKEN_PLACEHOLDER": "XXXX",
+      "REQUEST_NEW_TOKEN": "Neuen Code anfordern",
+      "CONFIRM": "Aktivieren",
+      "CANCEL": "Abbrechen",
+      "LOADING": "Aktiviere eMail...",
+      "REQUESTING_TOKEN": "Fordere Code an...",
+      "REQUEST_SUCCEEDED": "Code verschickt!",
+      "REQUEST_FAILED": "Anfrage fehlgeschlagen.",
+      "RESEND": "Aktivierungsmail erneut senden",
+      "RESEND_SUCCESS": "Aktivierungsmail wurde gesendet",
+      "RESEND_FAILURE": "Anfrage fehlgeschlagen"
+    },
+    "EMAIL_CHANGE_POPUP": {
+      "TITLE": "eMail ändern",
+      "HINT":
+        "Gib nachfolgend Deine aktuelle und Deine neue eMail-Adresse sowie Dein aktuelles Passwort ein.",
+      "CURRENT_MAIL_PLACEHOLDER": "Aktuelle eMail-Adresse",
+      "NEW_MAIL_PLACEHOLDER": "Neue eMail-Adresse",
+      "PASSWORD_PLACEHOLDER": "Passwort",
+      "CONFIRM": "Ändern",
+      "CANCEL": "Abbrechen",
+      "LOADING": "Ändere eMail...",
+      "REQUEST_SUCCEEDED": "eMail geändert!\n\nSchließe Vorgang ab...",
+      "AUTHENTICATION_SUCCEEDED": "eMail erfolgreich geändert!",
+      "REQUEST_FAILED": "Anfrage fehlgeschlagen."
+    },
+    "RESTORE_FACTORY_CONDITIONS": {
+      "TEXT": "Werkseinstellungen",
+      "LOADING": "Setze App zurück..."
+    },
+    "REGENERATE_KEYS": "Neue Keys generieren"
+  }
+}

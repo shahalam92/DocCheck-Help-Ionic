@@ -1,0 +1,58 @@
+{
+	"HINTS" : {
+    "DOCS": {
+      "HEADING": "Ärzte",
+      "CONTENT": "Alle DocCheck-Help Ärzte sind Mediziner - immer mit gültigem Arztausweis. Sie sind selbstständig tätig oder arbeiten in einer Klinik. Aber auch pensionierte Ärzte stellen ihre Erfahrung und ihr Fachwissen zur Verfügung.",
+      "TAGS": "Arzt, Prüfsiegel, Qualifikation, Approbation, Ärzte, Qualität, Arztausweis, Facharzt, Hausarzt"
+    },
+    "CHATS": {
+      "HEADING": "Chat-Beratung",
+      "CONTENT": "Der Chat hat eine unbegrenzte Zeichenzahl. Eine Beratung per Chat ermöglicht Dir auch ein Mitsenden von Bildern (z.B. bei Hauterkrankungen). Der Arzt wird Dir vorschlagen, den Chat zu beenden, sobald Deine medizinische Frage geklärt ist. Du kannst solange Rückfragen stellen, bis Deine Frage für Dich abschließend beantwortet ist.",
+      "TAGS": "Chat, Chat-Beratung, chatten, Upload, Befund, Bilder, Fotos, anonym, Rückfrage, Zeichenzahl, Begrenzung, Dauer, Länge"
+    },
+    "CALLS": {
+      "HEADING": "Telefonberatung",
+      "CONTENT": "Anrufen kannst Du bei allen Ärzten, die ihre Rufbereitschaft aktiviert haben. Dies erkennst Du an dem grünen Telefonhörer. Für den Verbindungsaufbau zum Arzt gibst Du Deine Telefonnummer an und wählst eine zweistellige PIN. Eine Schritt-für-Schritt-Anleitung erklärt Dir den Weg. Für Dein Gespräch mit dem Arzt stehen Dir 10 Minuten zur Verfügung.",
+      "TAGS": "Telefonat, Telefongespräch, Gespräch, Telefon-Sprechstunde, Notfall, Notdienst, Anruf, anrufen, rufbereit, Rufbereitschaft, PIN, Zeitlimit, Dauer, Zeit, Länge, Telefongebühren, anonym"
+    },
+    "APPOINTMENTS": {
+      "HEADING": "Terminabsprachen & Wartezeiten",
+      "CONTENT": "DocCheck Help funktioniert ganz ohne Terminabsprachen, jedoch nicht vollkommen ohne Wartezeiten. Spätestens innerhalb von 12 Stunden bekommst Du vom Arzt eine Rückmeldung auf Deine Chat-Anfrage. Alle Ärzte, die ihre Rufbereitschaft aktiviert haben, kannst Du hingegen sofort per Telefon erreichen.",
+      "TAGS": "Termin, Arzttermin, Wartezimmer, Wartezeit, Notfall, Notdienst, Sprechstundenzeiten, Praxis, Sprechstunde, Öffnungszeiten, Erreichbarkeit"
+    },
+    "PRICING": {
+      "HEADING": "Kosten & Guthaben",
+      "CONTENT": "Für eine medizinische Chat- oder Telefonberatung zahlst Du 9,90 Euro. Sollte einmal ein Arzt Deine Chat-Anfrage innerhalb des Zeitfensters nicht annehmen (können), so wird Dir der Betrag in der App gut geschrieben. Mit diesem Guthaben kannst Du dann nochmals eine neue Beratung starten.",
+      "TAGS": "Kosten, Bezahlung, Guthaben, Gutschrift, Erstattung, Tarif, Preis, Gebühr"
+    },
+    "PAYMENT": {
+      "HEADING": "Bezahlmöglichkeit",
+      "CONTENT": "Du kannst im Moment Deine Beratungen einfach und sicher über PayPal bezahlen. Solltest Du noch kein PayPal-Konto haben, kannst Du Dir <a href=\"\" onclick=\"window.open('https://www.paypal.com/de/webapps/mpp/account-selection', '_system')\">hier</a> eines erstellen. Für die Zukunft sind noch andere Bezahlmöglichkeiten geplant.",
+      "TAGS": "Kosten, Bezahlung, bezahlen, Kreditkarte, Lastschrift, PayPal, Bankeinzug, Rechnung"
+    },
+    "PRESCRIPTION": {
+      "HEADING": "Rezepte & AU-Bescheinigungen",
+      "CONTENT": "Über DocCheck Help kannst Du derzeit leider keine Rezepte oder eine AU bekommen. Dies würde den aktuell gültigen gesetzlichen Bestimmungen in Deutschland widersprechen. Es ist aber davon auszugehen, dass die Begrenzungen in der Telemedizin in den nächsten Jahren gelockert werden. Dann können wir Dir noch mehr Service bieten.",
+      "TAGS": "Rezept, Medikament, Verschreibung, AU, Arbeitsunfähigkeit, Bescheinigung, Telemedizin, verschreiben"
+    },
+    "INSURANCE": {
+      "HEADING": "Krankenkasse",
+      "CONTENT": "Leider übernehmen Krankenkassen bisher keine bzw. nur in eingeschränktem Maße Kosten für Online-Beratungen. Sobald sich hier etwas ändert, informieren wir Dich.",
+      "TAGS": "Krankenkasse, Krankenversicherung, private Krankenkasse, gesetzliche Krankenkasse, privat versichert, gesetzlich versichert, TK, Barmer, GEK, Techniker, DAK, AOK, IKK, BKK"
+    },
+    "NOTIFICATIONS": {
+      "HEADING": "App-Benachrichtigungen",
+      "CONTENT": "Bitte stelle sicher, dass Du Benachrichtigungen für DocCheck Help aktiviert hast. So bekommst Du sofort mit, wenn Dir ein Arzt auf Deine Anfrage antwortet.",
+      "TAGS": "Push Notification, Benachrichtigung, Mitteilung, Meldung, DocCheck Help, Nachricht"
+    },
+    "UPDATES": {
+      "HEADING": "App-Updates",
+      "CONTENT": "Damit Du immer eine aktuelle Version von DocCheck Help nutzt, lade Dir alle App-Updates auch herunter.",
+      "TAGS": "Update, Version, App, Store, App Store, Play Store, DocCheck Help"
+    },
+    "FILTER": {
+      "PLACEHOLDER": "Zu welchem Thema hast Du eine Frage?"
+    },
+    "CONTACT": "Unsere App ist noch neu!<br /><br />Wir freuen uns daher, wenn Du uns Feedback gibst. Schreib uns dazu gerne eine Nachricht über das <span class='dc-red dc-bold' ng-click='hints.openContactForm()'>Kontaktformular</span> oder an <a class=\"dc-red dc-bold\" href=\"mailto:help@doccheck.com\">help@doccheck.com</a>.<br /><br />Bist Du zufrieden? Dann lesen wir auch gerne Deine positive Rezension im App oder Play Store!"
+	}
+}

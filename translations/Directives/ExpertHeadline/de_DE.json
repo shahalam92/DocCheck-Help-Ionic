@@ -1,0 +1,11 @@
+{
+	"EXPERTHEADLINE": {
+	  "RECOMMEND": "Diesen Arzt empfehlen",
+	  "ADD_TO_FAVS": "Zu Favoriten hinzufügen",
+	  "STATUS": {
+	    "offline": "",
+	    "online": "live",
+	    "busy": "Im Gespräch"
+	  }
+	}
+}

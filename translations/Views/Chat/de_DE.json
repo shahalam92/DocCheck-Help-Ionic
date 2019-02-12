@@ -1,0 +1,106 @@
+{
+  "CHATVIEW": {
+    "WELCOME": "Herzlich willkommen in meinem DocCheck Help-Chat! Wie kann ich Ihnen helfen?",
+    "SEND_MESSAGE": "Nachricht hier eingeben...",
+    "LOAD_ADDITIONAL": "ältere Nachrichten anzeigen...",
+    "LOADING": {
+      "EXPERT": {
+        "ACCEPT": "Sende Bestätigung...",
+        "DENY": "Sende Absage...",
+        "REQUEST_CLOSE": "Sende Anfrage...",
+        "CLOSE": "Schließe Chat..."
+      },
+      "PATIENT": {
+        "REOPEN": "Sende Antwort...",
+        "CANCEL": "Breche Chat ab...",
+        "CLOSE": "Schließe Chat..."
+      }
+    },
+    "STATE_CHANGE": {
+      "PATIENT": {
+        "CANCEL": "Chat-Update: \n[{{patient}} hat den Chat abgebrochen.]",
+        "REOPEN": "Chat-Update: \n[{{patient}} hat den Chat erneut geöffnet.]",
+        "CLOSE": "Chat-Update: \n[{{patient}} hat den Chat geschlossen.]"
+      },
+      "EXPERT": {
+        "ACCEPT": "Chat-Update: \n[{{expert}} hat die Chat-Anfrage akzeptiert.]",
+        "DENY": "Chat-Update: \n[{{expert}} hat die Chat-Anfrage abgelehnt.]",
+        "REQUEST_CLOSE": "Chat-Update: \n[{{expert}} hat vorgeschlagen, den Chat zu schließen.]",
+        "CLOSE": "Chat-Update: \n[{{expert}} hat den Chat geschlossen.]"
+      }
+    },
+    "STATE_PREPARE": {
+      "PATIENT": {
+        "LABEL_NICKNAME": "Dein Nickname für diesen Chat:",
+        "RANDOM_NICKNAME": "zufälligen Namen vergeben",
+        "LABEL_GENERATE_NICKNAME": "Zufälligen Namen vergeben lassen:",
+        "NICKNAME_PLACEHOLDER": "Nickname...",
+        "INITIAL_MESSAGE_PLACEHOLDER": "Bitte gib hier Deine Frage und alle hilfreichen Informationen ein, damit Dein Experte entscheiden kann, ob er der richtige Ansprechpartner für diese Beratung ist.",
+        "ERROR_NICKNAME_LENGTH": "Dein Nickname muss mindestens {{length}} Zeichen lang sein!",
+        "ERROR_INITIAL_MESSAGE_LENGTH": "Deine Frage scheint nicht ausformuliert zu sein. Bitte gib dem Experten mehr Informationen zu Deinem Problem.",
+        "BUTTON_START": "Chat starten!",
+        "BUTTON_CANCEL": "Chat abbrechen"
+      }
+    },
+    "STATE_PENDING": {
+      "PATIENT": {
+        "MESSAGE": "In Kürze wird Dein Arzt über die Fallannahme entscheiden.",
+        "MORE": "Mehr darüber...",
+        "LESS": "Ausblenden",
+        "DETAILS": "<span class=\"dc-bold\">Was bedeutet das?</span><br /><br />Deine Anfrage ist nun übermittelt. Um weitere Fragen vorab zu klären, kannst Du bereits weitere Nachrichten senden.<br /><br />Die Beratung wird jedoch erst dann kostenpflichtig, wenn Dein Arzt die Beratung aktiv bestätigt.<br />",
+        "EXPIRY": {
+          "true" : "<br />Erfolgt die Bestätigung nicht innerhalb von einer Stunde, kannst Du mit Deinem Guthaben einen anderen Arzt anfragen.<br />",
+          "false" : "<br />Erfolgt die Bestätigung nicht innerhalb von {{expiryInHours}} Stunden, kannst Du mit Deinem Guthaben einen anderen Arzt anfragen.<br />"
+        }
+      },
+      "EXPERT": {
+        "MESSAGE": "Möchtest Du die Frage annehmen?",
+        "ACCEPT": "Ja",
+        "DENY": "Nein"
+      }
+    },
+    "STATE_REJECTED": {
+      "INFO": "Beratung abgelehnt ({{finished}})",
+      "FURTHER_INFO": "Der Chat wurde Deinem Benutzerkonto gutgeschrieben.<br /><br />Suche Dir einen anderen Experten aus und stelle Deine Frage!",
+      "PATIENT": {
+        "ASK_ANOTHER": "Anderen Experten fragen"
+      }
+    },
+    "STATE_ACTIVE": {
+      "EXPERT": {
+        "PROPOSE_CLOSURE": "Als beantwortet vorschlagen"
+      }
+    },
+    "STATE_CLOSURE_AWAITING": {
+      "PATIENT": {
+        "MESSAGE": "{{expert}} hat vorgeschlagen, den Chat zu beenden, da Deine Frage beantwortet wurde.",
+        "SATISFIED": "Okay (Chat beenden)",
+        "NOT_SATISFIED": "Rückfrage stellen"
+      },
+      "EXPERT": {
+        "CLOSE": "Chat schließen"
+      }
+    },
+    "STATE_EXPIRED": {
+      "INFO": "Der Arzt konnte Dir innerhalb von 12 Stunden leider nicht antworten.<br /><br />Deine angefragte Beratung wurde daher automatisch zurückgezogen. Der Betrag für die Buchung ist nicht verloren, er wurde Dir gutgeschrieben.<br /><br />Frage einfach einen neuen Arzt an oder probiere es nochmals bei demselben Arzt.",
+      "NEW" : "Neue Beratung anfordern"
+    },
+    "STATE_CLOSED": {
+      "INFO": "Beratung abgeschlossen ({{finished}})",
+      "PATIENT": {
+        "GET_INVOICE": "Rechnung erstellen",
+        "RATE_NOW": "Jetzt zur Bewertung!"
+      },
+      "EXPERT": {
+        "TO_CASH": "Zur Honorarübersicht"
+      }
+    },
+    "FILES": {
+      "GALLERY": "Galerie",
+      "CAMERA": "Kamera",
+      "UPLOADING": "Sende...",
+      "DOWNLOAD": "Herunterladen"
+    },
+    "STATUS_UPDATE_FAILED": "Anfrage fehlgeschlagen. Bitte prüfe Deine Internetverbindung."
+  }
+}

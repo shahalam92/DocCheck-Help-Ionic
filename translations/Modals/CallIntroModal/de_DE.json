@@ -1,0 +1,35 @@
+{
+	"CALLINTROMODAL": {
+
+		"YOU" : "<br />Du",
+		"DC"	: "<br />DocCheck Help",
+		"EXPERT" : "<br />Arzt",
+
+		"CALLSTART" : {
+			"TITLE": "Telefonberatung starten",
+			"TEXT"	: "Du gibst Deine Nummer ein, unter der Du vom Arzt angerufen werden möchtest.<br /><br />Du wählst eine zweistellige PIN, die vor Aktivierung des Telefonats abgefragt wird.<br /><br />Dann klickst Du auf \"Abschicken\"." 
+		},
+
+		"AUTHENTICATION" : {
+			"TITLE": "Aktivierung Telefonat",
+			"TEXT"	: "DocCheck Help ruft Dich unter dieser Nummer an:<br /><br />+49 221 302 04 462" 
+
+		},
+
+		"CONNECTION" : {
+			"TITLE": "Verbindungsaufbau",
+			"TEXT"	: "Du nimmst das Telefonat entgegen und gibst Deine zuvor gewählte PIN ein.<br /><br />Du wirst mit dem Arzt verbunden.<br /><br />Sobald der Arzt den Hörer abnimmt, beginnt Deine 10-minütige Telefonberatung." 
+		},
+
+		"END" : {
+			"TITLE": "Ende der Beratung",
+			"TEXT"	: "Nach 10 Minuten wird die Verbindung automatisch getrennt.<br /><br />Du wirst eine Minute vor Ende durch eine Ansage hierüber informiert." 
+		},
+
+		"FAIL" : {
+			"TITLE": "Kein Verbindungsaufbau",
+			"TEXT"	: "Keine Sorge! Dein Guthaben für das Telefonat wird Dir gutgeschrieben.<br /><br />Probiere es erneut oder kontaktiere einen anderen Arzt." 
+		}
+
+	}
+}

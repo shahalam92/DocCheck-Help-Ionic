@@ -1,0 +1,15 @@
+{
+  "EXPERTPROFILE": {
+    "TITLE": "Arztprofil",
+    "CHAT": "Chatten",
+    "CALL": "Anrufen",
+    "DISABLED": "Steht aktuell nicht für Beratungen zur Verfügung",
+    "FULLDESCRIPTION_true": "weniger...",
+    "FULLDESCRIPTION_false": "mehr...",
+    "HEADING": {
+      "DESCRIPTION": "Beschreibung",
+      "REVIEWS": "Bewertungen"
+    },
+    "BEST_REVIEW_SUMMARY": "{{date}}"
+  }
+}

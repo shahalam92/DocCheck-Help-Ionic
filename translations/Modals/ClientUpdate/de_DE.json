@@ -1,0 +1,8 @@
+{
+	"CLIENT_UPDATE_MODAL": {
+		"HEADLINE": "Neue Version verfügbar",
+		"TEXT": "Für DocCheck Help steht eine neue Version zur Verfügung.<br /><br />Update Deine App, um Deine Beratungen fortzuführen.",
+		"APP_STORE": "Zum AppStore",
+		"PLAY_STORE": "Zum PlayStore"		
+	}
+}

@@ -1,0 +1,30 @@
+{
+  "CONTACT": {
+    "TITLE": "Kontakt",
+    "PLACEHOLDER": {
+      "NAME": "Name",
+      "MAIL": "eMail",
+      "PHONE": "Telefon (optional)",
+      "COMMENT": "Kommentar"
+    },
+    "ERROR": {
+      "NAME": "Bitte gib einen Namen ein.",
+      "MAIL": "Bitte gib eine gültige eMail-Adresse ein, damit wir Dich kontaktieren können.",
+      "PHONE": "Bitte gib eine gültige Telefonnummer ein, damit wir Dich kontaktieren können.",
+      "COMMENT": "Bitte gib eine Nachricht ein!"
+    },
+    "SEND_LOG": "Technischen Problembericht mitsenden (Gerätedaten, keine persönlichen Daten)",
+    "SUBMIT": "Nachricht senden",
+    "HINT": "Du hast eine Frage, Wünsche oder Verbesserungsvorschläge zu DocCheck Help? Du hast ein Problem mit der Telefon- oder Chat-Beratung? Wir freuen uns auf Deine Nachricht!",
+    "LOADING": "Nachricht wird gesendet...",
+    "SUCCESS": {
+      "TITLE": "<span class='dc-bold'>Nachricht gesendet</span>",
+      "MESSAGE": "Deine Nachricht wurde erfolgreich übermittelt! Vielen Dank für Dein Feedback!"
+    },
+    "FAILURE": {
+      "TITLE": "Nachricht nicht gesendet",
+      "MESSAGE": "Deine Nachricht konnte nicht übermittelt werden. Prüfe Deine Internetverbindung und versuche es später erneut oder wende Dich an help@doccheck.com!"
+    },
+    "OK": "Okay"
+  }
+}

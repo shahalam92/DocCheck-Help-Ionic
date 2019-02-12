@@ -1,0 +1,47 @@
+{
+  "dc_err_msg": {
+    "user_not_found": "Ungültige Kombination aus eMail-Adresse und Passwort.",
+    "no_user_found": "Ungültige Kombination aus eMail-Adresse und Passwort.",
+    "is_dc_user": "Dein Help Account ist mit Deinem DocCheck Account verknüpft.<br /> Bitte führe die Änderung <span class='dc-red' ng-click='vm.headToDocCheck()'>hier</span> durch.",
+    "invalid_token": "Der eingegebene Code ist ungültig.",
+    "FALLBACK": "Da ist etwas schief gegangen! Prüfe bitte Deine Eingaben und Deine Internetverbindung."
+  },
+  "dc_violation_msg": {
+    "one_review_per_consultation_allowed": "Pro Beratung ist nur eine Bewertung möglich.",
+    "patient_is_not_owner_of_transaction": "Falsche Transaktion.",
+    "expert_is_not_online": "Der Arzt ist gerade nicht online.",
+    "voucher_redemption": {
+      "invalid_voucher": "Der Gutscheincode ist ungültig."
+    },
+    "voucher_expired": "Der Gutscheincode ist leider nicht mehr gültig.",
+    "voucher_not_active": "Der Gutscheincode ist nicht mehr aktiv.",
+    "invalid_phone_number": "Die Telefonnummer ist ungültig.",
+    "wrong_consultation_type": "Der Gutscheincode ist für diese Art von Beratung nicht gültig."
+  },
+  "assertion": {
+    "not_empty": "Bitte ausfüllen.",
+    "length": {
+      "default": {
+        "min": "Zu wenig Zeichen.",
+        "max": "Zu viele Zeichen."
+      }
+    },
+    "wrong_value": "Falscher Wert.",
+    "email": {
+      "invalid": {
+        "default": "eMail-Adresse ist ungültig."
+      }
+    }
+  },
+  "validator": {
+    "unique_email": {
+      "msg": "eMail-Adresse ist bereits vergeben."
+    }
+  },
+  "_COMMENT": "// predefined errors in external bundles, won't touch those though",
+  "This value is not a valid email address.": "Diese eMail-Adresse ist ungültig.",
+  "Invalid username and password combination": "Ungültige Kombination aus eMail-Adresse und Passwort.",
+
+  "_REMOVE": "// 02.11.2016 / as soon as new version is on stage /",
+  "Email address already exists.": "eMail-Adresse ist bereits vergeben."
+}

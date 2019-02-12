@@ -1,0 +1,46 @@
+{
+  "CALLVIEW":
+  {
+    "TITLE": "Telefonberatung",
+
+    "PREPARE":
+    {
+      "INFO": "Gib Deine Telefonnummer ein, unter der Du angerufen werden möchtest.",
+      "SUBMIT": "Abschicken    ",
+      "PLACEHOLDER": "...",
+      "HINT": "Telefonnummer ohne führende Null",
+      "LOADING": "Anfrage wird gesendet...",
+      "CANCEL": "Anruf abbrechen",
+      "EXPERT_OFFLINE_HINT": "Der Experte ist zurzeit abwesend und steht nicht für Anrufe zur Verfügung. Bitte versuche es später erneut.",
+      "DCPIN": "Wähle bitte eine persönliche PIN, die zu Beginn des Telefonats eingegeben werden muss.",
+      "INFO2" : "Sollte die Eingabe falsch sein, erhältst Du eine Gutschrift. Mit dieser kannst Du dann eine neue Beratung starten.<br /><br />Sende Deine Anfrage ab - das war's!",
+      "INTRO_MODAL": "<span class='fa fa-chevron-right'>Was passiert nach dem Abschicken?"
+    },
+
+    "CLOSED": {
+      "DATE": "Telefonberatung abgeschlossen ({{date}})",
+      "DURATION": "Dauer des Gesprächs: {{duration}}"
+    },
+
+    "CANCELED": {
+      "DATE": "Telefonberatung nicht zustande gekommen ({{date}})",
+      "INFO": "Leider ist das Telefonat nicht zustande gekommen. <br /><br />Dein Guthaben wurde Dir daher gutgeschrieben. Versuche erneut, {{name}} zu erreichen oder suche Dir einen anderen Experten aus."
+    },
+
+    "WAITING": {
+      "INFO": "Die Verbindung für Deine Telefonberatung wird aufgebaut.",
+      "INFO2": "Behalte Dein Telefon im Auge und stell sicher, dass Du den Anruf nicht verpasst.<br /><br />Du wirst unter der von Dir angegebenen Telefonnummer angerufen. <span class='dc-bold'>{{number}}</span>"
+    },
+
+    "ERROR": {
+      "TITLE": "Abwesenheit",
+      "NO_CONSULTATION": "Die Details zu Deinem Telefonat konnten nicht abgerufen werden. <br /><br />Bitte prüfe Deine Internetverbindung und versuche es erneut. <br /><br />",
+      "REFETCH": "Erneut versuchen",
+      "REFETCHING": "Rufe Details ab...",
+      "DATE": "Problem bei Verbindungsaufbau ({{date}})",
+      "INFO": "Leider gab es ein Problem beim Verbindungaufbau. <br /><br />Bitte kontaktiere uns über das Kontaktformular, damit wir das Problem lösen können.",
+      "CONTACT": "Kontakt aufnehmen"
+    }
+
+  }
+}

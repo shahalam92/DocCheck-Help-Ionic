@@ -1,0 +1,19 @@
+{
+	"FILTERMODAL" : {
+		"TITLE" : "Filter",
+		"NO_DISCIPLINES_SET" : "Fachgebiete wählen",
+		"DISCIPLINES_SET" : "<span class=\"dc-bold\">{{disciplineCount}} Fachgebiete gewählt</span>",
+		"STATUS" : {
+			"0" : "Alle",
+			"1" : "live"
+		},
+		"SECTION" : {
+			"RATING" : "Min. Bewertung",
+			"DISCIPLINES" : "Fachgebiete",
+			"STATUS" : "Status"
+		},
+		"DISCARD" : "Zurücksetzen",
+		"APPLY"		: "Übernehmen",
+		"DONE"		: "Fertig"
+	}
+}

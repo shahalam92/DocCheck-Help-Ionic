@@ -1,0 +1,26 @@
+{
+  "CONSULTATIONS": {
+    "TITLE": "Beratungen",
+    "NOCONS": "Du möchtest mit einem unserer Ärzte in Kontakt treten? Dann starte <span class=\"dc-bold\">jetzt schnell und einfach</span> eine Beratung!<br /><br /><span class=\"fa fa-phone dc-inline-icon\"></span>Erhalte Antworten auf Deine Fragen in einem persönlichen <span class=\"dc-bold\">Telefonat</span>! <br /><br /><span class=\"fa fa-comment dc-inline-icon\"></span>Gerade keine Stimme? Oder hast Du lieber alles schwarz auf weiß? Dann buche Deinen privaten <span class=\"dc-bold\">Chat</span>!<br />",
+    "GO": "Jetzt Beratung starten!",
+    "NOAUTH": "<span class='dc-bold'>Behalte den Überblick über Deine Beratungen!</span><br /><br />Logge Dich ein oder registrier' Dich jetzt bei DocCheck Help! Die Registrierung für DocCheck Help ist absolut kostenlos. <br /><br /><span class='dc-bold'>Jetzt einloggen und Beratung starten!</span>",
+    "NOMESSAGE": "Schreib' eine Nachricht!",
+    "LOGIN": "Zum Login",
+    "LOADING": "Lade Beratungen...",
+    "CHAT": {
+      "PREPARE": "Stell' Deine Frage, um den Chat zu starten!",
+      "REJECTED": "Die Chat-Beratung wurde vom Experten abgelehnt.",
+      "CLOSED": "Die Chat-Beratung wurde abgeschlossen.",
+      "EXPIRED": "Deine Chatanfrage ist abgelaufen."
+    },
+    "CALL": {
+      "PREPARE": "Bitte gib Deine Telefonnummer an!",
+      "OFFLINE": "Experte aktuell nicht verfügbar.",
+      "CANCELED": "Anruf nicht zustande gekommen",
+      "CLOSED": "Telefonberatung abgeschlossen",
+      "ERROR": "Da ist etwas schief gegangen. Kontaktiere uns!"
+    },
+    "ERROR": "Bei der Verbindung zum DocCheck-Help-Server ist etwas schief gegangen.<br /><br />Prüfe Deine Internetverbindung oder versuche es später erneut.<br /><br /><button ng-click='consultations.fetchConsultations()' class='dc-button-block dc-button-lightgreen'>Erneut versuchen</button>",
+    "DECRYPTION_FAILED": " - "
+  }  
+}

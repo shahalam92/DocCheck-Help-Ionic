@@ -1,0 +1,11 @@
+{
+  "TOS": {
+    "TITLE": "AGB",
+    "CHANGED": {
+      "TITLE": "AGB-Änderung",
+      "CONTENT": "Die DocCheck Help <span class=\"dc-red\">AGB</span> haben sich geändert."
+    },
+    "ACCEPT": "Ich akzeptiere die AGB",
+    "MODAL_TITLE": "AGB"
+  }
+}

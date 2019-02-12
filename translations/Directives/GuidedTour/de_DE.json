@@ -1,0 +1,18 @@
+{
+	"GUIDED_TOUR": {
+	  "CONFIRM_BUTTON": "Weiter",
+	  "CANCEL": "Abbrechen",
+	  "PATIENT": {
+	    "WELCOME": "Willkommen bei DocCheck Help! Wir haben eine kurze Tour durch unsere App vorbereitet, damit Du Dich schnell zurechtfindest.",
+	    "HOME": "Hier findest Du alle Ärzte, die Dir bei Deinen gesundheitlichen Fragen helfen. Möchtest Du schnell einen passenden Facharzt finden, dann nutze den Fachgebiets-Filter. <br /><br />Wähle aus, ob Du Deine Frage lieber via Chat oder Telefon mit dem Arzt besprechen möchtest.",
+	    "CONSULTATIONS": "Deine Chats und Telefonate findest Du in dieser Übersicht.",
+	    "FAVORITES": "Bist Du mit einem Arzt besonders zufrieden, dann speichere ihn als Favoriten. So hast Du schnell Zugriff auf Deine Lieblings-Ärzte.",
+	    "SETTINGS": "Unter \"Einstellungen\" kannst Du Deine Zugangsdaten ändern, findest Antworten auf häufige Fragen und weitere Infos.",
+	    "OUTRO": {
+	      "GENERAL": "Schau Dich um und mach Dir ein Bild von unseren Spezialisten!",
+	      "CONTACT": "Sollte etwas unklar sein, hast Du noch Rückfragen oder Verbesserungsvorschläge: Unter den Einstellungen findest Du auch unser Kontaktformular!",
+	      "END": "Gute Besserung! <span class='fa fa-face-blinking'></span>"
+	    }
+	  }
+	}
+}

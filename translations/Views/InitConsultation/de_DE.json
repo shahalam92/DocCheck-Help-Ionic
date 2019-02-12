@@ -1,0 +1,32 @@
+{
+  "INITCONSULTATION": {
+    "TITLE": "Bezahlung",
+    "TERMS": "Ich akzeptiere die <span id='terms' class='dc-red'>AGB</span> und die <span class='dc-red' id='privacy'>Datenschutzerklärung</span>. Der Chat wird verschlüsselt an den Arzt meiner Wahl übertragen.",
+    "CONTINUE_true": "Gutschein jetzt einlösen",
+    "CONTINUE_false": "Weiter",
+    "PAYMENT": {
+      "SELECT": "Zahlungsmethode:",
+      "PAYPAL": "Sicher zahlen via <img src='img/pplogo.png' />",
+      "VOUCHER": "Gutschein"
+    },
+    "VOUCHER": {
+      "LABEL": "Gutscheincode eingeben",
+      "TOGGLE_ON": "Gutscheincode einlösen",
+      "TOGGLE_OFF": "Mit PayPal bezahlen",
+      "LENGTH": "Gutscheincode muss aus {{length}} Zeichen bestehen."
+    },
+    "HAS_ACTIVE_CONSULTATIONS": {
+      "true": "Eine laufende Beratung mit diesem Experten",
+      "false": "{{amount}} laufende Beratungen mit diesem Experten"
+    },
+    "ERROR": {
+      "IDENTITY": "Es ist nicht möglich, eine Beratung mit sich selbst zu starten.",
+      "TEXT": "Die Zahlungsdaten für Deine Beratung konnten nicht abgerufen werden. <br /><br />Prüfe Deine Internetverbindung oder versuche es später erneut.",
+      "RETRY": "Erneut versuchen",
+      "BACK": "Zurück"
+    },
+    "INTROMODAL": {
+      "SHOW": "<span class=\"dc-bold\">So funktioniert's</span>"
+    }
+  }
+}

@@ -1,0 +1,6 @@
+{
+	"DC_PASSWORD_STRENGTH": {
+	  "SHORT": "Dein Passwort muss aus mindestens {{length}} Zeichen bestehen.",
+	  "INVALID": "Dein Passwort darf aus Buchstaben, Zahlen und folgenden Sonderzeichen bestehen: ^$.|?[]*+()/{}!#%&,:;\\-=@_~"
+	}
+}

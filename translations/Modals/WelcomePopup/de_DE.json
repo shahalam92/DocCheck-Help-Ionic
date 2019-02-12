@@ -1,0 +1,12 @@
+{
+  "WELCOME_POPUP": {
+    "TITLE": "Willkommen bei DocCheck Help!",
+    "_INTRO": "Vielen Dank, Deine Registrierung war erfolgreich!<br /><br />In Kürze erhältst Du eine eMail mit einem Aktivierungscode, mit dem Du Deine eMail-Adresse bestätigen kannst.<br /><br />eMail bereits erhalten? Dann erledige das Ganze doch direkt:",
+    "INTRO": "Vielen Dank, Deine Registrierung war erfolgreich!<br /><br />In Kürze erhältst Du eine eMail. Bitte bestätige Deine eMail-Adresse über den darin enthaltenen Link.<br />",
+    "CODE_PLACEHOLDER": "4-stelliger Bestätigungscode",
+    "BUTTONS": {
+      "CONFIRM": "eMail jetzt bestätigen",
+      "DISMISS": "Okay"
+    }
+  }
+}

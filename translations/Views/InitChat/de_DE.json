@@ -1,0 +1,45 @@
+{
+  "INITCHATVIEW": {
+    "__TITLE": "Bezahlung",
+    "CHARGE": "Chat",
+    "DETAILS": "<li>Online-Sprechstunde mit geprüftem Arzt</li><li>Inklusive Versand von Fotos/Befundbildern</li><li>Auf Wunsch anonym</li>",
+    "TERMS": "Ich akzeptiere die <span class='dc-red'>AGB</span> und die <span class='dc-red'>Datenschutzerklärung</span>.",
+    "__CONTINUE": "Weiter",
+    "HINT": "Erst bei Erhalt einer zufriedenstellenden Antwort wird das hinterlegte Guthaben an den Arzt übermittelt.",
+    "WARRANTY": {
+      "true" : "Du erhältst innerhalb von einer Stunde eine Rückmeldung von Deinem angefragten Arzt.",
+      "false" : "Du erhältst innerhalb von {{hours}} Stunden eine Rückmeldung von Deinem angefragten Arzt."
+    },
+    "__PAYMENT": {
+      "SELECT": "Zahlungsmethode:",
+      "LABEL": "Sicher zahlen per:",
+      "PAYPAL": "<img src='img/pplogo.png' />",
+      "VOUCHER": "Gutschein"
+    },
+    "__VOUCHER": {
+      "LABEL": "Gutscheincode eingeben",
+      "TOGGLE_ON": "Gutscheincode einlösen",
+      "TOGGLE_OFF": "Mit PayPal bezahlen"
+    },
+    "LOADING": {
+      "PAYMENT_INFO": "Nur noch ein Schritt bis zu Deinem Chat!",
+      "VALIDATE": "Überprüfe Zahlung...",
+      "INIT": "Sende Chatanfrage...",
+      "PREPARE": "Bereite Chat vor...",
+      "START": "Starte Chat...",
+      "VOUCHER": "Prüfe Gutscheincode..."
+    },
+    "ALREADY_PAID_false": "<span class='dc-bold'>Aktuelles Guthaben: {{amount}} Chat(s).</span> <br />Dieser Chat wird von Deinem Guthaben abgebucht, es entstehen keine weiteren Kosten!",
+    "ALREADY_PAID_true": "<span class='dc-bold dc-center'>Deine erste Chat-Beratung schenken wir Dir!</span>",
+    "FIRST_CHAT_HINT": "Der Gutschein gilt einmalig für einen frei wählbaren Arzt.",
+    "__HAS_ACTIVE_CONSULTATIONS": {
+      "true": "Du hast eine laufende Beratung mit diesem Experten",
+      "false": "Du hast {{amount}} laufende Beratungen mit diesem Experten"
+    },
+    "__ERROR": {
+      "TEXT": "Die Zahlungsdaten für Deine Beratung konnten nicht abgerufen werden. <br /><br />Prüfe Deine Internetverbindung oder versuche es später erneut.",
+      "RETRY": "Erneut versuchen",
+      "BACK": "Zurück"
+    }
+  }
+}

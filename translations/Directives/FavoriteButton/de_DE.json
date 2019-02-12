@@ -1,0 +1,6 @@
+{
+	"FAVORITE_BUTTON": {
+	  "ADD_TO_FAVS": "Zu Favoriten hinzufügen",
+	  "ADDED_SUCCESSFULLY": "<span>{{expert}} wurde zu Deinen Favoriten hinzugefügt.</span>"
+	}
+}

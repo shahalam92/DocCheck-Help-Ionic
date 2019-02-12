@@ -1,0 +1,9 @@
+{
+	"RATINGLISTING": {
+	  "STARS": "Sterne",
+	  "REVIEWS": "Bewertungen",
+	  "GENERAL_true": "Ø {{average}} ({{count}} Bewertungen)",
+	  "GENERAL_false": "Ø {{average}} ({{count}} Bewertung)",
+	  "SHOW_ALL": "Zeige Bewertungen mit <span class='dc-bold'>{{filter}} Sternen.</span><div class='dc-red dc-bold'>Alle anzeigen</div>"
+	}
+}

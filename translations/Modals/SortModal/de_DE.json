@@ -1,0 +1,8 @@
+{
+	"SORTMODAL" : {
+		"TITLE": "Sortierung",
+		"RATING_DESC" : "Bewertung",
+		"ALPH_ASC" : "Alphabetisch (A bis Z)",
+		"ALPH_DESC" : "Alphabetisch (Z bis A)"
+	}
+}

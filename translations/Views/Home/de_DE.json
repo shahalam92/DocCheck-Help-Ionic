@@ -1,0 +1,16 @@
+{
+  "HOME": {
+    "TITLE": "Wähle Deinen Arzt aus:",
+    "BALANCE_POPOVER": {
+      "TEXT":
+        "Hier siehst Du Dein aktuelles Guthaben an Chat- und Telefonberatungen."
+    },
+    "ERROR":
+      "Bei der Verbindung zum DocCheck-Help-Server ist etwas schief gegangen.<br /><br />Prüfe Deine Internetverbindung oder versuche es später erneut.<br /><br /><button ng-click='home.fetchExperts()' class='dc-button-block dc-button-lightgreen'>Erneut versuchen</button>",
+    "TIMEOUT": {
+      "MESSAGE":
+        "Eine Zeitüberschreitung ist aufgetreten. Bitte überprüfe Deine Internetverbindung.",
+      "RETRY": "Erneut versuchen"
+    }
+  }
+}

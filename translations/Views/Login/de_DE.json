@@ -1,0 +1,70 @@
+{
+  "LOGIN": {
+    "HEADLINE": "Bitte melde Dich an:",
+    "HINT":
+      "Um Guthaben und Beratungen zuordnen zu können, melde dich an. Deine Daten unterliegen dem <span class='dc-red'>Datenschutz</span>.",
+    "REGISTER": "Kostenlose Registrierung",
+    "REGISTER_HINT":
+      "Um DocCheck Help nutzen zu können, registriere dich bitte. Deine Daten unterliegen dem <span class='dc-red'>Datenschutz</span>.",
+    "PLACEHOLDER": {
+      "MAIL": "eMail",
+      "PASSWORD": "Passwort",
+      "CONFIRMATION": "Passwort wiederholen"
+    },
+    "SUBMIT": "Einloggen",
+    "SUBMIT_REGISTRATION": "Registrieren",
+    "TOGGLE_TO_REGISTRATION":
+      "Du hast noch kein Benutzerkonto?<br /> Jetzt <span class=\"dc-red dc-bold\">kostenloses registrieren</span>!",
+    "TOGGLE_TO_LOGIN":
+      "Bereits registriert? Jetzt <span class=\"dc-red dc-bold\">zum Login</span>!",
+    "FILL_FORM": "Bitte gib Deine eMail-Adresse und dein Passwort ein.",
+    "INVALID": "Ungültige Kombination aus eMail und Passwort.",
+    "PASSWORD_FORGOTTEN": "Passwort vergessen",
+    "PASSWORD_RESET_PENDING": "Passwort wird zurückgesetzt...",
+    "PASSWORD_RESET_INFO": {
+      "TITLE": "Passwort zurücksetzen",
+      "CONTENT_UPPER":
+        "Gib nachfolgend Deine eMail-Adresse ein, mit der Du Dich bei DocCheck Help registriert hast:",
+      "CONTENT_LOWER":
+        "Wir schicken Dir eine eMail mit einem Code, mit dem Du im nächsten Schritt Dein Passwort zurücksetzen kannst.",
+      "CONFIRM": "Zurücksetzen",
+      "CANCEL": "Abbrechen"
+    },
+    "PASSWORD_RESET_INPUT": {
+      "TITLE": "Passwort zurücksetzen",
+      "CONTENT":
+        "Gib hier den Code ein, den Du per eMail erhalten hast. {{tokenInput}} Wähle Dein neues Passwort: {{passwordInput}}",
+      "INFO": {
+        "CODE": "Gib hier den Code ein, den Du per eMail erhalten hast.",
+        "PASSWORD": "Wähle Dein neues Passwort:"
+      },
+      "PLACEHOLDER": {
+        "TOKEN": "XXXX",
+        "PASSWORD": "Neues Passwort"
+      },
+      "CONFIRM": "Ändern",
+      "CANCEL": "Abbrechen",
+      "ERROR": {
+        "SHORT_TOKEN": "Der eingegebene Code ist zu kurz."
+      }
+    },
+    "PASSWORD_MATCH": "Die eingegebenen Passwörter stimmen nicht überein.",
+    "PASSWORD_LENGTH": "Dein Passwort muss mindestens 8 Zeichen lang sein.",
+    "ALREADY_EXISTING":
+      "Diese eMail-Adresse ist bereits für DocCheck Help registriert.",
+    "NOT_REACHABLE":
+      "Verbindung zu DocCheck Help konnte nicht hergestellt werden.",
+    "UNDEFINED_ERROR":
+      "Da ist etwas schief gegangen! Überprüfe Deine Internetverbindung oder versuche es später erneut.",
+    "NOT_VALIDATED": "Diese eMail-Adresse wurde noch nicht validiert",
+    "BACK": "Zurück",
+    "REGISTRATION_DOCCHECK": "<strong>Kostenlos registrieren</strong>",
+    "PASSWORD_DOCCHECK": "<strong>Passwort vergessen?</strong>",
+    "RESETTING_PASSWORD": {
+      "PENDING": "Ändere Passwort...",
+      "SUCCESS": "Passwort geändert",
+      "FAILURE": "Passwortänderung fehlgeschlagen"
+    },
+    "THROTTLED": "Bitte warte {{seconds}} Sekunden und versuche es dann erneut."
+  }
+}

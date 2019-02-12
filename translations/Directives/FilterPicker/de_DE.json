@@ -1,0 +1,8 @@
+{
+	"FILTERPICKER" : {
+		"INFO" : {
+			"AVAILABLE" : "<span class=\"dc-bold\">{{count}}</span> Ärzte verfügbar",
+			"NONE": "Zu diesen Kriterien wurden leider keine Ärzte gefunden."
+		}
+	}	
+}

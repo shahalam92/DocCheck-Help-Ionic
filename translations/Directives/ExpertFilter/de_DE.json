@@ -1,0 +1,8 @@
+{
+	"EXPERTFILTER": {
+	  "TITLE": "Fachgebiete wählen",
+	  "HINT": "Bitte wähle eine Fachrichtung",
+	  "PLACEHOLDER": "Problem eingeben...",
+	  "NOFILTER": "Alle Fachgebiete"
+	}
+}

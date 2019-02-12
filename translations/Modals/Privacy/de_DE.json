@@ -1,0 +1,11 @@
+{
+  "PRIVACY": {
+    "TITLE": "Datenschutz",
+    "CHANGED": {
+      "TITLE": "Datenschutz-Änderung",
+      "CONTENT": "Die DocCheck Help <span class=\"dc-red\">Datenschutzbestimmungen</span> haben sich geändert."
+    },
+    "ACCEPT": "Ich akzeptiere die AGB",
+    "MODAL_TITLE": "Datenschutz"
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "YES": "Ja",
+  "NO": "Nein",
+  "DC_DATE": {
+    "BEFORE": "vor #PLACEHOLDER Tagen",
+    "YESTERDAY": "gestern",
+    "LESSTHANONEHOUR": "vor weniger als 1 Stunde",
+    "HOURS_AGO": "vor #PLACEHOLDER Stunden"
+  },
+  "CONSULTATION_LISTING_ITEM": {
+    "NEW": "(neu)",
+    "ACTIVE_CALL": "Laufendes Telefonat",
+    "ESTIMATED_END": "... endet um <span class='dc-bold'>{{estimatedEnd}} Uhr.</span>"
+  },
+  "DEEPLINK": {
+    "ACTIVATING_EMAIL": {
+      "LOADING": "eMail-Aktivierung läuft...",
+      "SUCCESS": "Vielen Dank für Deine eMail-Aktivierung!",
+      "FAILURE": "eMail-Aktivierung fehlgeschlagen.<br /><br />Prüfe Deine Internetverbindung oder versuche es später nochmal!"
+    }
+  },
+  "DCINIT": {
+    "INFO": {
+      "TITLE": "Initialer Reset",
+      "CONTENT": "Um Kompatibilitätsprobleme auszuschließen sollte diese App vor dem Testing komplett zurückgesetzt werden.<br /><br />Möchtest Du die App jetzt zurücksetzen?",
+      "SUCCESS": "Erfolgreich zurückgesetzt",
+      "FAILED": "Zurücksetzen fehlgeschlagen"
+    }
+  },
+  "DC_LOADING": {
+    "CANCEL": "Abbrechen"
+  },
+  "TERMS": {
+    "TITLE": "AGB",
+    "ERROR": "Prüfe Deine Internetverbindung."
+  },
+  "PRIVACY": {
+    "TITLE": "Datenschutz",
+    "ERROR": "Prüfe Deine Internetverbindung."
+  },
+  "CONNECTIVITY": {
+    "OFFLINE": "Dein Gerät scheint aktuell nicht mit dem Internet verbunden zu sein."
+  }
+}

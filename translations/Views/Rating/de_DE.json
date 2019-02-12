@@ -1,0 +1,13 @@
+{
+	"RATING": {
+	  "TITLE": "Bewertung abgeben",
+	  "QUESTION": "Wie zufrieden bist Du mit dem ärztlichen Rat?",
+	  "HEADLINE": "So hast Du diese Beratung bewertet:",
+	  "DONE": "Fertig",
+	  "COMMENT_PLACEHOLDER": "Kommentar (optional)",
+	  "SUBMITTING": "Übermittle Bewertung...",
+	  "BACK": "Zurück",
+	  "NOCOMMENT": "Du hast zu dieser Beratung keine weiteren Angaben gemacht.",
+	  "THANKS": "Vielen Dank für Deine Bewertung!"
+	}
+}
